@@ -9,7 +9,7 @@ export default function MaxWidthContainer({
 }: MaxWidthContainerProps) {
   return (
     <div
-      className={`w-full max-w-[600px] mx-auto bg-[#0A0A11] shadow-2xl pt-10 ${className}`}
+      className={`w-full max-w-[600px] mx-auto bg-[#0A0A11] shadow-2xl ${className}`}
     >
       {children}
     </div>
