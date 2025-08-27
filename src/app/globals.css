@@ -120,3 +120,7 @@
     @apply bg-background text-foreground;
   }
 }
+
+.font-noto-serif {
+  font-family: var(--font-noto-serif), serif;
+}

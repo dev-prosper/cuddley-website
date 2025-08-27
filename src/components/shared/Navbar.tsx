@@ -19,7 +19,7 @@ export default function Navbar() {
 
   return (
     <header className="w-full max-w-[600px] flex flex-row justify-between px-4 pt-10 relative mx-auto">
-      <div className=" mid:bg-green-500">
+      <div className="">
         <Link href="/">
           <CuddleyLogo className="w-48 h-8 text-[#FEFEFF]" />
         </Link>
@@ -36,7 +36,7 @@ export default function Navbar() {
 
         <div
           className={cn(
-            "absolute top-0 left-0 overflow-y-auto w-full h-screen bg-[#0A0A11] pt-12 px-4.5 transform transition-transform duration-300 ease-in-out space-y-10",
+            "absolute top-0 left-0 overflow-y-auto w-full h-screen bg-[#0A0A11] pt-12 px-4.5 transform transition-transform duration-300 ease-in-out space-y-10  z-50",
             isMobileNavbarOpen ? "translate-x-0" : "-translate-x-[2000px]"
           )}
         >
