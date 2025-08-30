@@ -4,10 +4,7 @@ import Image from "next/image";
 export default function Home() {
   return (
     <div className="space-y-14 font-noto-serif">
-      {/* Hero Section */}
       <Hero />
-
-      {/* Featured Collections Section */}
 
       <section className="w-full max-w-150 h-250">
         <div className="w-89 h-25 mx-2 md:mx-27 space-y-2">
