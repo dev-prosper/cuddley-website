@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
 import { Noto_Serif } from "next/font/google";
 import "./globals.css";
-import MaxWidthContainer from "@/components/shared/MaxWidthContainer";
-import Navbar from "@/components/shared/Navbar";
-import Footer from "@/components/shared/Footer";
-
+import MaxWidthContainer from "@/components/shared/maxwidth-container";
+import Navbar from "@/components/shared/navbar";
+import Footer from "@/components/shared/footer";
 
 const notoSerif = Noto_Serif({
   variable: "--font-noto-serif",
@@ -23,9 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${notoSerif.variable} antialiased`}
-      >
+      <body className={`${notoSerif.variable} antialiased`}>
         <MaxWidthContainer>
           <Navbar />
           {children}

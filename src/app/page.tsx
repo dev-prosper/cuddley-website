@@ -1,14 +1,12 @@
-import Hero from "@/components/landing-page/Hero";
+import Hero from "@/components/landing-page/hero";
 import Image from "next/image";
-import Link from "next/link";
 
 export default function Home() {
   return (
     <div className="space-y-14 font-noto-serif">
       {/* Hero Section */}
-        <Hero />
+      <Hero />
 
-        
       {/* Featured Collections Section */}
 
       <section className="w-full max-w-150 h-250">
@@ -27,7 +25,7 @@ export default function Home() {
             <div className="w-44 h-63 space-y-3">
               <div className="w-44 h-25 rounded-[8px]">
                 <Image
-                  src="/Living-Room.png"
+                  src="/images/living-room.png"
                   alt="Living Room Sofa"
                   width={173}
                   height={110}
@@ -46,7 +44,7 @@ export default function Home() {
             <div className="w-44 h-63 space-y-3">
               <div className="w-44 h-25 rounded-[8px]">
                 <Image
-                  src="/Dining-Room.png"
+                  src="/images/dining-room.png"
                   alt="Dining Room Set-up"
                   width={173}
                   height={110}
@@ -67,7 +65,7 @@ export default function Home() {
             <div className="w-44 h-63 space-y-3">
               <div className="w-44 h-25 rounded-[8px]">
                 <Image
-                  src="/Living-Room.png"
+                  src="/images/living-room.png"
                   alt="Living Room Sofa"
                   width={173}
                   height={110}
@@ -86,7 +84,7 @@ export default function Home() {
             <div className="w-44 h-63 space-y-3">
               <div className="w-44 h-25 rounded-[8px]">
                 <Image
-                  src="/Dining-Room.png"
+                  src="/images/dining-room.png"
                   alt="Dining Room Set-up"
                   width={173}
                   height={110}
@@ -106,7 +104,7 @@ export default function Home() {
           <div className="w-full h-78 space-y-5">
             <div className="w-full h-44 rounded-[12px]">
               <Image
-                src="/Bedroom.png"
+                src="/images/bedroom.png"
                 alt="Bedroom Set-up and Decorations"
                 width={368}
                 height={175}

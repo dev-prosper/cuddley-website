@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <div className="h-120 bg-[url('/background.png')] bg-cover bg-center mt-8 relative md:py-15 py-20 px-2">
+    <div className="h-120 bg-[url('/images/background.png')] bg-cover bg-center mt-8 relative md:py-15 py-20 px-2">
       <h2 className="text-4xl font-extrabold text-white">Elevate Your Space</h2>
 
       <div className="w-52 space-y-6 mt-16">
