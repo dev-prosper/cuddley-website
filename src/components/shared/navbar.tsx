@@ -37,7 +37,7 @@ export default function Navbar() {
         <div
           className={cn(
             "absolute top-0 left-0 overflow-y-auto w-full h-screen bg-[#0A0A11] pt-12 px-4.5 transform transition-transform duration-300 ease-in-out space-y-10 z-50",
-            isMobileNavbarOpen ? "translate-x-0" : "-translate-x-[2000px]"
+            isMobileNavbarOpen ? "translate-x-0" : "-translate-x-[2000px]",
           )}
         >
           <div className="bg-[#1C1F26] rounded-xl flex flex-row justify-between py-4 px-4 items-center">
