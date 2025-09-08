@@ -58,9 +58,9 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="w-full max-w-150 h-63 flex flex-row space-x-5">
-            <div className="w-44 h-63 space-y-3">
-              <div className="w-44 h-25 rounded-[8px]">
+          <div className="w-full max-w-150 h-63 flex flex-row space-x-5 mid:border-2">
+            <div className="w-44 mid:w-48 h-63 space-y-3">
+              <div className="w-44 mid:w-48 h-25 rounded-[8px]">
                 <Image
                   src="/images/living-room.png"
                   alt="Living Room Sofa"
@@ -70,7 +70,7 @@ export default function Home() {
               </div>
 
               <div className="w-44 h-34 space-y-2">
-                <h3 className="w-44 h-6 text-[17px] text-white">Living Room</h3>
+                <h3 className="w-44 mid:w-48 h-6 text-[17px] text-white">Living Room</h3>
                 <p className="w-44 h-27 text-[14px] text-[#9EA3B8]">
                   Create a welcoming and stylish living space with our range of
                   sofas, armchairs, and coffee tables.
