@@ -33,7 +33,7 @@ export default function page() {
           <p className="text-white text-[16px] font-inter">
             Transform your space with our expert styling services. We curate
             furniture, decor, and accessories to reflect your personal style and
-            enhance your home's aesthetic.
+            enhance your home&apos;s aesthetic.
           </p>
         </div>
       </div>
