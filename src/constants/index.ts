@@ -12,6 +12,7 @@ export const PAGE_URL_PATHS = {
   MIRRORS: "mirrors",
   CONTACT_US: "contact-us",
   SERVICE: "service", 
+  SUPPORT: "support"
 };
 
 export const navLinks = [
@@ -28,4 +29,5 @@ export const navLinks = [
   { label: "Mirrors", href: `/${PAGE_URL_PATHS.MIRRORS}` },
   { label: "Service", href: `/${PAGE_URL_PATHS.SERVICE}` }, 
   { label: "Contact Us", href: `/${PAGE_URL_PATHS.CONTACT_US}` },
+  { label: "Support", href: `/${PAGE_URL_PATHS.SUPPORT}` },
 ];

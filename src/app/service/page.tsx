@@ -40,7 +40,7 @@ export default function page() {
 
       {/* Inquire Link */}
       <div className="w-full h-16 pl-4 pt-3">
-        <Link href="">
+        <Link href="/support">
           <div className="w-21 h-10 bg-[#1CC8F8] rounded-[8px] pl-4.5 pt-2">
             <p className="w-12 h-5 font-inter font-bold text-[14px]">Inquire</p>
           </div>
@@ -69,7 +69,7 @@ export default function page() {
 
       {/* Interior Decorating Book A Consultation Link */}
       <div className="w-full h-16 pl-4 pt-3">
-        <Link href="">
+        <Link href="/support">
           <div className="w-40 h-10 bg-[#1CC8F8] rounded-[8px] pl-4.5 pt-2">
             <p className="w-38 h-5 font-inter text-[14px] font-bold">
               Book Consultation
@@ -100,7 +100,7 @@ export default function page() {
 
       {/* Interior Consulting Book A Consultaion link */}
       <div className="w-full h-16 pl-4 pt-3">
-        <Link href="">
+        <Link href="/support">
           <div className="w-40 h-10 bg-[#1CC8F8] rounded-[8px] pl-4.5 pt-2">
             <p className="w-38 h-5 font-inter text-[14px] font-bold">
               Book Consultation
