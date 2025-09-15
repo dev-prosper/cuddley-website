@@ -41,6 +41,10 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+
+  --font-noto-serif: var(--font-noto-serif);
+  --font-roboto: var(--font-roboto);
+  --font-inter: var(--font-inter)
 }
 
 :root {
@@ -119,16 +123,4 @@
   body {
     @apply bg-background text-foreground;
   }
-}
-
-.font-noto-serif {
-  font-family: var(--font-noto-serif), serif;
-}
-
-.font-roboto {
-  font-family: var(--font-roboto), sans-serif;
-}
-
-.font-inter {
-  font-family: var(--font-inter), sans-serif;
 }
