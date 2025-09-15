@@ -20,7 +20,7 @@ export const PAGE_URL_PATHS = {
   DIFFUSERS_AND_CANDLES: "diffusers-and-candles",
   MIRRORS: "mirrors",
   CONTACT_US: "contact-us",
-  SERVICE: "service",
+  SERVICE: "services",
 };
 
 export const navLinks = [
