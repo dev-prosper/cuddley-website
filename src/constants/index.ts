@@ -1,9 +1,20 @@
-import { TruckIcon, ClockIcon, QualityAsurranceIcon } from "@/components/icons";
+import {
+  TruckIcon,
+  ClockIcon,
+  QualityAsurranceIcon,
+  LoveIcon,
+  CollabIcon,
+  StarIcon,
+} from "@/components/icons";
 import { ComponentType, SVGProps } from "react";
 
 type Reason = {
   heading: string;
   description: string;
+  icon: ComponentType<SVGProps<SVGSVGElement>>;
+};
+type Value = {
+  value: string;
   icon: ComponentType<SVGProps<SVGSVGElement>>;
 };
 
@@ -21,6 +32,7 @@ export const PAGE_URL_PATHS = {
   MIRRORS: "mirrors",
   CONTACT_US: "contact-us",
   SERVICE: "services",
+  SUPPORT: "support",
 };
 
 export const navLinks = [
@@ -46,6 +58,7 @@ export const navLinks = [
   { label: "Mirrors", href: `/${PAGE_URL_PATHS.MIRRORS}` },
   { label: "Service", href: `/${PAGE_URL_PATHS.SERVICE}` },
   { label: "Contact Us", href: `/${PAGE_URL_PATHS.CONTACT_US}` },
+  { label: "Support", href: `/${PAGE_URL_PATHS.SUPPORT}` },
 ];
 
 export const FEATURED_PRODUCTS = [
@@ -98,4 +111,10 @@ export const REASONS_TO_CHOOSE: Reason[] = [
       "We stand behind the quality of our products, offering a satisfaction guarantee on every purchase.",
     icon: QualityAsurranceIcon,
   },
+];
+
+export const VALUES: Value[] = [
+  { value: "Client-Centric Approach", icon: LoveIcon },
+  { value: "Collaboration", icon: CollabIcon },
+  { value: "Excellence", icon: StarIcon },
 ];

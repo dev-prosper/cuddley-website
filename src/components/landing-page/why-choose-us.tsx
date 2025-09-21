@@ -6,7 +6,7 @@ export default function WhyChooseUs() {
   return (
     <section className="p-4 space-y-12">
       <SectionHeading
-        heading="Why Choose US?"
+        heading="Why Choose Us?"
         subHeading="We are committed to providing exceptional quality, service, and value to our customers."
       />
 
