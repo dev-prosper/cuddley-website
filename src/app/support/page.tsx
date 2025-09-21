@@ -1,6 +1,5 @@
 import PageHeader from "@/components/shared/page-header";
 import Image from "next/image";
-import React from "react";
 
 export default function Page() {
   return (
