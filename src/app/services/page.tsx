@@ -1,22 +1,12 @@
 import React from "react";
-import { BackMenu } from "@/components/icons";
 import Link from "next/link";
+import PageHeader from "@/components/shared/page-header";
 
 export default function page() {
   return (
     <div className="space-y-2.5">
       {/* Service Page header section */}
-      <div className="w-full max-w-150 h-25 pt-11 pl-4 flex flex-row ">
-        <div className="w-12 h-12 pt-3">
-          <BackMenu className="w-6 h-6 cursor-pointer text-white" />
-        </div>
-
-        <div className="w-77.5 h-8 mt-1.5 pl-20.5 ">
-          <p className="text-white text-[23px] font-bold font-roboto">
-            Services
-          </p>
-        </div>
-      </div>
+      <PageHeader pageName="Services" />
 
       {/* Interior Styling Heading */}
       <div className="w-full max-w-150 h-21.5 mt-3 pt-5 pl-4">
@@ -40,7 +30,7 @@ export default function page() {
 
       {/* Inquire Link */}
       <div className="w-full h-16 pl-4 pt-3">
-        <Link href="">
+        <Link href="/support">
           <div className="w-21 h-10 bg-[#1CC8F8] rounded-[8px] pl-4.5 pt-2">
             <p className="w-12 h-5 font-inter font-bold text-[14px]">Inquire</p>
           </div>
@@ -69,7 +59,7 @@ export default function page() {
 
       {/* Interior Decorating Book A Consultation Link */}
       <div className="w-full h-16 pl-4 pt-3">
-        <Link href="">
+        <Link href="/support">
           <div className="w-40 h-10 bg-[#1CC8F8] rounded-[8px] pl-4.5 pt-2">
             <p className="w-38 h-5 font-inter text-[14px] font-bold">
               Book Consultation
@@ -100,7 +90,7 @@ export default function page() {
 
       {/* Interior Consulting Book A Consultaion link */}
       <div className="w-full h-16 pl-4 pt-3">
-        <Link href="">
+        <Link href="/support">
           <div className="w-40 h-10 bg-[#1CC8F8] rounded-[8px] pl-4.5 pt-2">
             <p className="w-38 h-5 font-inter text-[14px] font-bold">
               Book Consultation

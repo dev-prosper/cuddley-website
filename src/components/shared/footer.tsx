@@ -25,6 +25,12 @@ export default function Footer() {
         <h3 className="font-noto-serif font-bold text-xl">Quick Links</h3>
         <div className="space-y-2">
           <Link
+            href="/about-us"
+            className="font-inter text-sm leading-6 text-[#BCB7B7D9] block"
+          >
+            About Cuddley Interiors
+          </Link>
+          <Link
             href="/services"
             className="font-inter text-sm leading-6 text-[#BCB7B7D9] block"
           >

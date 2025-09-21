@@ -1,9 +1,29 @@
-import { TruckIcon, ClockIcon, QualityAsurranceIcon } from "@/components/icons";
+import {
+  TruckIcon,
+  ClockIcon,
+  QualityAsurranceIcon,
+  LoveIcon,
+  CollabIcon,
+  StarIcon,
+  EmailIcon,
+  PhoneIcon,
+  LocationIcon,
+} from "@/components/icons";
 import { ComponentType, SVGProps } from "react";
 
 type Reason = {
   heading: string;
   description: string;
+  icon: ComponentType<SVGProps<SVGSVGElement>>;
+};
+type Value = {
+  value: string;
+  icon: ComponentType<SVGProps<SVGSVGElement>>;
+};
+type ContactDetails = {
+  contactType: string;
+  contactDetails: string;
+  url: string;
   icon: ComponentType<SVGProps<SVGSVGElement>>;
 };
 
@@ -21,6 +41,7 @@ export const PAGE_URL_PATHS = {
   MIRRORS: "mirrors",
   CONTACT_US: "contact-us",
   SERVICE: "services",
+  SUPPORT: "support",
 };
 
 export const navLinks = [
@@ -46,6 +67,7 @@ export const navLinks = [
   { label: "Mirrors", href: `/${PAGE_URL_PATHS.MIRRORS}` },
   { label: "Service", href: `/${PAGE_URL_PATHS.SERVICE}` },
   { label: "Contact Us", href: `/${PAGE_URL_PATHS.CONTACT_US}` },
+  { label: "Support", href: `/${PAGE_URL_PATHS.SUPPORT}` },
 ];
 
 export const FEATURED_PRODUCTS = [
@@ -98,4 +120,37 @@ export const REASONS_TO_CHOOSE: Reason[] = [
       "We stand behind the quality of our products, offering a satisfaction guarantee on every purchase.",
     icon: QualityAsurranceIcon,
   },
+];
+
+export const VALUES: Value[] = [
+  { value: "Client-Centric Approach", icon: LoveIcon },
+  { value: "Collaboration", icon: CollabIcon },
+  { value: "Excellence", icon: StarIcon },
+];
+
+export const CONTACT_DETAILS: ContactDetails[] = [
+  {
+    contactType: "Email",
+    contactDetails: "cuddleys23@gmail.com",
+    url: "mailto:cuddleys23@gmail.com",
+    icon: EmailIcon,
+  },
+  {
+    contactType: "Phone",
+    contactDetails: "+2349033209215",
+    url: "tel:+2349033209215",
+    icon: PhoneIcon,
+  },
+  {
+    contactType: "Location",
+    contactDetails: "Plot 10 Matia Mall, Orchid road Lekki Lagos.",
+    url: "#",
+    icon: LocationIcon,
+  },
+];
+
+export const ONLINE_HOURS = [
+  { days: "Monday - Friday:", time: "9:00AM - 6:00PM WAT" },
+  { days: "Saturday:", time: "Closed" },
+  { days: "Sunday:", time: "Closed" },
 ];
