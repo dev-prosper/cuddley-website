@@ -8,7 +8,7 @@ export default function page() {
       <PageHeader pageName="About Us" />
 
       <MissionStorySection
-        imgUrl="/images/Showroom.png"
+        imgUrl="/images/showroom.png"
         altText="Cuddley Showroom"
         heading="Our Story"
         longText="Cuddleys Interiors was founded in 2018 by Adaeze Onwuka, a
@@ -20,7 +20,7 @@ export default function page() {
       />
 
       <MissionStorySection
-        imgUrl="/images/Cuddley-store.png"
+        imgUrl="/images/cuddley-store.png"
         altText="Cuddley Stores"
         heading="Our Mission"
         longText="At Cuddleys Interiors, our mission is to transform houses into
