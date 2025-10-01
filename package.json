@@ -13,6 +13,7 @@
   "dependencies": {
     "@radix-ui/react-slot": "^1.2.3",
     "@wix/ecom": "^1.0.1408",
+    "@wix/essentials": "^0.1.28",
     "@wix/redirects": "^1.0.97",
     "@wix/sdk": "^1.17.1",
     "@wix/stores": "^1.0.531",

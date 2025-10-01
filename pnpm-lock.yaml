@@ -14,6 +14,9 @@ importers:
       '@wix/ecom':
         specifier: ^1.0.1408
         version: 1.0.1408(@types/react@19.1.15)(@wix/headless-components@0.0.13(@types/react-dom@19.1.9(@types/react@19.1.15))(@types/react@19.1.15)(react-dom@19.1.0(react@19.1.1))(react@19.1.1))(react@19.1.1)(use-sync-external-store@1.5.0(react@19.1.1))
+      '@wix/essentials':
+        specifier: ^0.1.28
+        version: 0.1.28(typescript@5.9.2)
       '@wix/redirects':
         specifier: ^1.0.97
         version: 1.0.97
