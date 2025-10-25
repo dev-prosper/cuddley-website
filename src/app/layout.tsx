@@ -2,39 +2,52 @@ import type { Metadata } from "next";
 import { Noto_Serif, Roboto, Inter } from "next/font/google";
 import "./globals.css";
 import MaxWidthContainer from "@/components/shared/maxwidth-container";
-import Navbar from "@/components/shared/navbar";
+import ClientNavbar from "@/components/shared/ClientNavbar";
 import Footer from "@/components/shared/footer";
+import { wixClientServer } from "@/lib/wixClientServer"; 
 
 const notoSerif = Noto_Serif({
   variable: "--font-noto-serif",
   subsets: ["latin"],
 });
 
-const roboto = Roboto ({
+const roboto = Roboto({
   variable: "--font-roboto",
-  subsets: ["latin"]
+  subsets: ["latin"],
 });
 
-const inter = Inter ({
+const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
-})
+});
 
 export const metadata: Metadata = {
   title: "Cuddley Interiors",
   description: "Elevate your space with Cuddley Interiors",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
+  // ✅ Fetch Wix categories on the server
+  const wixClient = await wixClientServer();
+  const catsResponse = await wixClient.collections.queryCollections().find();
+  console.log("Fetched categories:", catsResponse.items);
+  const cats = catsResponse.items.map((cat: any) => ({
+    _id: cat._id,
+    slug: cat.slug,
+    name: cat.name,
+  }));
+
   return (
     <html lang="en">
-      <body className={`${notoSerif.variable} ${roboto.variable} ${inter.variable} antialiased`}>
+      <body
+        className={`${notoSerif.variable} ${roboto.variable} ${inter.variable} antialiased`}
+      >
         <MaxWidthContainer>
-          <Navbar />
+          <ClientNavbar cats={cats} />
           {children}
           <Footer />
         </MaxWidthContainer>

@@ -12,8 +12,10 @@
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.2.3",
-    "@wix/ecom": "^1.0.1408",
+    "@types/js-cookie": "^3.0.6",
+    "@wix/ecom": "^1.0.1432",
     "@wix/essentials": "^0.1.28",
+    "@wix/members": "^1.0.330",
     "@wix/redirects": "^1.0.97",
     "@wix/sdk": "^1.17.1",
     "@wix/stores": "^1.0.531",
@@ -23,10 +25,11 @@
     "lucide": "^0.541.0",
     "lucide-react": "^0.541.0",
     "next": "15.5.0",
-    "react": "^19.1.0",
-    "react-dom": "19.1.0",
+    "react": "19.1.1",
+    "react-dom": "19.1.1",
     "resend": "^6.0.3",
-    "tailwind-merge": "^3.3.1"
+    "tailwind-merge": "^3.3.1",
+    "zustand": "^5.0.8"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.8.1",
