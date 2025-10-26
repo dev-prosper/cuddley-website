@@ -3,7 +3,7 @@ import { BackMenu } from "../icons";
 import { useRouter } from "next/navigation";
 
 type PageHeaderProps = {
-  pageName: string;
+  pageName?: string | null;
 };
 
 export default function PageHeader({ pageName }: PageHeaderProps) {
