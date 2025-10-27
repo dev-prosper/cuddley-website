@@ -1,10 +1,18 @@
 import React from "react";
 import { wixClientServer } from "@/lib/wixClientServer";
 import { products } from "@wix/stores";
-import { BackMenu } from "@/components/icons";
 import Image from "next/image";
 import Link from "next/link";
 import PageHeader from "@/components/shared/page-header";
+
+interface SearchParams {
+  name?: string;
+  type?: string;
+  min?: number;
+  max?: number;
+  page?: string;
+  sort?: string;
+}
 
 const PRODUCT_PER_PAGE = 8;
 
@@ -13,7 +21,7 @@ export default async function CategoryPage({
   searchParams,
 }: {
   params: { category: string };
-  searchParams?: any;
+  searchParams: SearchParams;
 }) {
   const wixClient = await wixClientServer();
 
@@ -40,13 +48,13 @@ export default async function CategoryPage({
     .hasSome("collectionIds", [collection._id]) // ✅ correct filter
     .hasSome(
       "productType",
-      searchParams?.type ? [searchParams.type] : ["physical", "digital"]
+      searchParams?.type ? [searchParams.type] : ["physical", "digital"],
     )
     .gt("priceData.price", searchParams?.min || 0)
     .lt("priceData.price", searchParams?.max || 999999)
     .limit(PRODUCT_PER_PAGE)
     .skip(
-      searchParams?.page ? parseInt(searchParams.page) * PRODUCT_PER_PAGE : 0
+      searchParams?.page ? parseInt(searchParams.page) * PRODUCT_PER_PAGE : 0,
     );
 
   if (searchParams?.sort) {
@@ -80,7 +88,7 @@ export default async function CategoryPage({
           {collection.name}
         </p> */}
 
-        <PageHeader pageName={collection?.name}/>
+        <PageHeader pageName={collection?.name} />
       </div>
 
       {/* Product Grid */}

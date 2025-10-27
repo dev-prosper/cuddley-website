@@ -1,5 +1,4 @@
 "use client";
-
 import React from "react";
 import { wixClient } from "@/lib/wixClient";
 
@@ -15,10 +14,6 @@ type AddToCartProps = {
 
 export default function AddToCart({
   productId,
-  productName,
-  price,
-  imageUrl,
-  variantId,
   quantity = 1,
   stockNumber,
 }: AddToCartProps) {
@@ -34,8 +29,8 @@ export default function AddToCart({
         lineItems: [
           {
             catalogReference: {
-              appId: process.env.NEXT_PUBLIC_WIX_APP_ID!, 
-              catalogItemId: productId, 
+              appId: process.env.NEXT_PUBLIC_WIX_APP_ID!,
+              catalogItemId: productId,
             },
             quantity: quantity ?? 1,
           },
@@ -57,7 +52,11 @@ export default function AddToCart({
         disabled={isOutOfStock || isLoading}
         className="w-full h-14 rounded-[8px] cursor-pointer bg-[#1CC8F8] flex items-center justify-center text-black font-inter font-bold text-[16px]"
       >
-        {isOutOfStock ? "Out of Stock" : isLoading ? "Adding..." : "Add to Cart"}
+        {isOutOfStock
+          ? "Out of Stock"
+          : isLoading
+            ? "Adding..."
+            : "Add to Cart"}
       </button>
     </div>
   );

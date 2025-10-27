@@ -10,23 +10,19 @@ importers:
     dependencies:
       '@radix-ui/react-slot':
         specifier: ^1.2.3
-        version: 1.2.3(@types/react@19.1.15)(react@19.1.1)
+        version: 1.2.3(@types/react@19.1.15)(react@19.2.0)
       '@types/js-cookie':
         specifier: ^3.0.6
         version: 3.0.6
       '@wix/ecom':
         specifier: ^1.0.1432
-        version: 1.0.1432(@types/react@19.1.15)(@wix/headless-components@0.0.13(@types/react-dom@19.1.9(@types/react@19.1.15))(@types/react@19.1.15)(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react@19.1.1)(use-sync-external-store@1.5.0(react@19.1.1))
-        version: 1.2.3(@types/react@19.1.15)(react@19.2.0)
-      '@wix/ecom':
-        specifier: ^1.0.1408
-        version: 1.0.1408(@types/react@19.1.15)(@wix/headless-components@0.0.13(@types/react-dom@19.1.9(@types/react@19.1.15))(@types/react@19.1.15)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))(react@19.2.0)(use-sync-external-store@1.5.0(react@19.2.0))
+        version: 1.0.1433(@types/react@19.1.15)(@wix/headless-components@0.0.13(@types/react-dom@19.1.9(@types/react@19.1.15))(@types/react@19.1.15)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))(react@19.2.0)(use-sync-external-store@1.5.0(react@19.2.0))
       '@wix/essentials':
         specifier: ^0.1.28
         version: 0.1.28(typescript@5.9.2)
       '@wix/members':
         specifier: ^1.0.330
-        version: 1.0.330
+        version: 1.0.365
       '@wix/redirects':
         specifier: ^1.0.97
         version: 1.0.97
@@ -35,7 +31,7 @@ importers:
         version: 1.17.1
       '@wix/stores':
         specifier: ^1.0.531
-        version: 1.0.531(@types/react@19.1.15)(@wix/headless-components@0.0.13(@types/react-dom@19.1.9(@types/react@19.1.15))(@types/react@19.1.15)(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react@19.1.1)(typescript@5.9.2)(use-sync-external-store@1.5.0(react@19.1.1))
+        version: 1.0.531(@types/react@19.1.15)(@wix/headless-components@0.0.13(@types/react-dom@19.1.9(@types/react@19.1.15))(@types/react@19.1.15)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))(react@19.2.0)(typescript@5.9.2)(use-sync-external-store@1.5.0(react@19.2.0))
       class-variance-authority:
         specifier: ^0.7.1
         version: 0.7.1
@@ -68,7 +64,7 @@ importers:
         version: 3.3.1
       zustand:
         specifier: ^5.0.8
-        version: 5.0.8(@types/react@19.1.15)(react@19.1.1)(use-sync-external-store@1.5.0(react@19.1.1))
+        version: 5.0.8(@types/react@19.1.15)(react@19.2.0)(use-sync-external-store@1.5.0(react@19.2.0))
     devDependencies:
       '@commitlint/cli':
         specifier: ^19.8.1
@@ -1122,8 +1118,8 @@ packages:
   '@wix/auto_sdk_ecom_back-in-stock-settings@1.0.28':
     resolution: {integrity: sha512-aki8ce8NqukvaQbHdimw4XosppsLVRanTfBix4Gq/f37Yyohfext4siBU6XrxjCB5mbb1w8fFAjbCxqUxUIQug==}
 
-  '@wix/auto_sdk_ecom_cart-v-2@1.0.33':
-    resolution: {integrity: sha512-gvLJ+t5/eGl+IOjD/BrLSRS82WOZ3lX5l/RDeyp5GUB7xBL5gJ2W//OFXi4wR6dhLhoGt3xe30Woa6mXSJ9/3g==}
+  '@wix/auto_sdk_ecom_cart-v-2@1.0.34':
+    resolution: {integrity: sha512-ZLGjyHdNMSX5dLyPNKQ37CW7JseXFJ9CrpzwT4ovcMiC0lUvdVlAupQ3x8lHomyNOtr2RVOs75OHWuNGmdWyVg==}
 
   '@wix/auto_sdk_ecom_cart@1.0.89':
     resolution: {integrity: sha512-QS6Tq2UmB9Od7DSCVtp9thZETHAoaZ+6o7YakXbB9PueziQ0q/ajPtNaEOp2pF8t5ErPJkeaMsCYc4U2dkTMdw==}
@@ -1140,14 +1136,20 @@ packages:
   '@wix/auto_sdk_ecom_checkout-templates@1.0.72':
     resolution: {integrity: sha512-0IRV6lBvqICAkmR44FvEYMtpExGY8bESmts/CSNrIBO6qGevuziwsgnAIkXwPB6FWX5dc4Jh6HNQyWawXmY1dg==}
 
+  '@wix/auto_sdk_ecom_checkout@1.0.81':
+    resolution: {integrity: sha512-8lvRu89K25dOuJ9UwfhyyBfwZ83RsJZq7h6Kys1hX54h+a9S2FZHfk4xoii2t1f7yLayyw3w95CIVIvETGuEaA==}
+
   '@wix/auto_sdk_ecom_checkout@1.0.84':
     resolution: {integrity: sha512-Ycjun+Mrg+MPce7zFct+89lt9ggdKuCgOsMyl3ReyOsNZP7LL7cBLzE74k50tfd7JfGUhsFfSeJ7GrQs46vvyA==}
 
   '@wix/auto_sdk_ecom_currencies@1.0.23':
     resolution: {integrity: sha512-ofX/siDAcbU3pgs4IGS3aEnx2OsyPCsXazFmw2r6DBs2ec92ZXHosXa9AuL6o51OB0lioLXcSZwSzrciFHdByQ==}
 
-  '@wix/auto_sdk_ecom_current-cart-v-2@1.0.33':
-    resolution: {integrity: sha512-90RrEIDuLDjx9UGgj02+YxG66h1Fs5EMAHNeisUJNFkKJsEntvR4bmeXmGhvMpIYR9zlLtdDo9/5pdAB85QiaQ==}
+  '@wix/auto_sdk_ecom_current-cart-v-2@1.0.34':
+    resolution: {integrity: sha512-SWQzee4uxSTnFwLoULs2Um+oVzU3YUOp7yyx0qzYCX22SD80WqZrFcb704+scN1k5sHlOxCaFkLzWXMJUO4tqQ==}
+
+  '@wix/auto_sdk_ecom_current-cart@1.0.87':
+    resolution: {integrity: sha512-lbe2V8wldv0EtnsdRypqcs9zafEAHN6QFwBonVwq4+iwv1jijPu5rm7cYjda2v5Jgx9pPX5hHcQBiCejbugTig==}
 
   '@wix/auto_sdk_ecom_current-cart@1.0.90':
     resolution: {integrity: sha512-ajzaQRfRGRsJhLbgJCy8pOm5rmyyBjgs0S4sc8gOSUr0PygpWw+HTmKlYz00u35xEw511Q3g/l7bfQrQs6Y5xw==}
@@ -1278,20 +1280,26 @@ packages:
   '@wix/auto_sdk_members_authentication@1.0.25':
     resolution: {integrity: sha512-PHXVBA+K6ul48n4RejtJ6pipqh+o5OlC7YCuh0nuWc+R13LWLcyfJVfENZ4e2Q1TfwaVhEMTGqLD+4e/qtWYUg==}
 
-  '@wix/auto_sdk_members_authorization@1.0.19':
-    resolution: {integrity: sha512-uPoMMBnvXPsu/A4jZttr0p6L/ImkScKgYFFMC1fUJe2uJoXOAZGeDmuvOGz6SThFiuGHpQJ+kSvbgy3m7fb3iQ==}
+  '@wix/auto_sdk_members_authorization@1.0.20':
+    resolution: {integrity: sha512-PuVJfGqDCbiNr0u99vb7yffEkPtBo/9P0tnenDkAJ/B0UdxSt9Mb3SfWiTbnr6XbAO6QvmTVOZyWLnnrt8Ap5w==}
 
-  '@wix/auto_sdk_members_badges@1.0.26':
-    resolution: {integrity: sha512-/C5ks0gbxMCj6kL1a7fI66v0snwXubiGkbEv73mOR6Iz6aQfDIx8J/95x2xkXNQwwru8f/5ZqxDPkp5ijsvYcQ==}
+  '@wix/auto_sdk_members_badge-assignments@1.0.4':
+    resolution: {integrity: sha512-9Xpo9SnOwqTXi1WUBBZo4097h/zuR5cb4jeU6ORXyCINUcx8MnanT03cq8yDPE5ODPuI3k9EsBXizulKKoLMXw==}
 
-  '@wix/auto_sdk_members_custom-field-applications@1.0.21':
-    resolution: {integrity: sha512-/QyGLUGFfc9CqWT/r83C1IGwNJXPvMOzkiIu5KpxYAUqVGFlPOMjah95t2fFaPeB3Uu9g7AQ4QnWDy4BE61Jng==}
+  '@wix/auto_sdk_members_badges-v-2@1.0.5':
+    resolution: {integrity: sha512-1rzvxmFS2c2d2rx/kpO2I7cfHR2EE2KjqbNF0cKZtXDCTDE1LeqjYUOMf1/HpLDj8v4Z8RGxqjpJx0hX6wHH0w==}
+
+  '@wix/auto_sdk_members_badges@1.0.32':
+    resolution: {integrity: sha512-BZE0G2kQYJ9N7Bec2Mb04Vkqp/5ed3b2r7n3BPAfIwtGlJd4QaXmMiq4EVrxD4jFZV8JVpKQz31qVFZlEsxBqA==}
+
+  '@wix/auto_sdk_members_custom-field-applications@1.0.24':
+    resolution: {integrity: sha512-du0PfLox1oNUe3U7OW1jbEUbwNHB67gwzcs9Ut4mECc54lITjZjzbf0rA5XEsV3LBBC0aqDuJwiDUBS8Lp285Q==}
 
   '@wix/auto_sdk_members_custom-field-suggestions@1.0.18':
     resolution: {integrity: sha512-T3WrsWC8XkBfNVdPFh367T74jU23qsc3Teao2byBXXbUKCy+xezo/itw0way/M0AMAPYDvrw0Qxw3FWuT8+6Zw==}
 
-  '@wix/auto_sdk_members_custom-fields@1.0.29':
-    resolution: {integrity: sha512-H70zoLREtxUwa0b94fjulhFyRL5I99/SH7YQu7UYDHbGVrToWFgVGYNu7AGJPpvYHHWE/l76Qd5fJcHvPhcO/g==}
+  '@wix/auto_sdk_members_custom-fields@1.0.33':
+    resolution: {integrity: sha512-HxrE9XAVVzp8YSZdaNw4Dp4pQRWd58cXvhJiSz6NT8obWX3BK6KFHdFsxdx5cShVqZNOvBgqpjOhPYutMiRVbA==}
 
   '@wix/auto_sdk_members_default-privacy@1.0.20':
     resolution: {integrity: sha512-S+kPd/HY76OKtbpPEzBHrZqufUSDDWM4YMxIQ1Ni0zSmUW+5DtNVdKbsGU7kjn59OP7vaAV/Y0vLcysn7qb2SA==}
@@ -1299,26 +1307,26 @@ packages:
   '@wix/auto_sdk_members_member-followers@1.0.22':
     resolution: {integrity: sha512-WQwmwksTnaUkTI5wBSz9mM9WAUI7EpHbDcV12hjUn7TgjIaXnfn3x0U7vgsrFHFzUuS6HBquv0mySn7CRzLg+Q==}
 
-  '@wix/auto_sdk_members_member-privacy-settings@1.0.31':
-    resolution: {integrity: sha512-g1E2/cuWKmPTAvMxHst3vzNDhltBsHkniHUAWQkYhFgG7EB/2gbz1p2c130KDFUKx0v2UxJVYV306vUmNYTbgg==}
+  '@wix/auto_sdk_members_member-privacy-settings@1.0.34':
+    resolution: {integrity: sha512-32BPydgOkG4KyLsEh9oKED2wE7BzlZoty2ybLhvsE32aWqEog4UxcvJOkVQJjnsw/7tpNotEWGNG+5wLc+/FRA==}
 
   '@wix/auto_sdk_members_member-report@1.0.23':
     resolution: {integrity: sha512-+p+7Nb0e4GpFk8mkboRG/t0329L8X7dW880FZxaCMeXXNNf0WYKxJKwz2Lwj9wz1W1IfJkNsEUkO8y2Qz/TuDw==}
 
-  '@wix/auto_sdk_members_member-role-definition@1.0.25':
-    resolution: {integrity: sha512-+6W68aVx8lt5KSnruUz/5CZpWzl/orjzive8uJWrkZs6lZJvzcbQw7Q2ljbc76I+QOBpB43mJrkhratWVbzNvw==}
+  '@wix/auto_sdk_members_member-role-definition@1.0.27':
+    resolution: {integrity: sha512-ASu/JvoErKgIj43ToAifE9Od5RuIthF+zHi6TRsnH0p/UHnxSiOwqVQ5C7g+k0iIOjBLFADvOetCcAuqjIVB6A==}
 
   '@wix/auto_sdk_members_member-to-member-block@1.0.19':
     resolution: {integrity: sha512-jQNlUEbnWlOCbuUg6N5TNNrMB2KQrpt3ram+5zjfaN694h4eV1Hi8poPRF3xOgWlDr5KAPlwVb8MlgBXozTNlg==}
 
-  '@wix/auto_sdk_members_members-about@1.0.32':
-    resolution: {integrity: sha512-p/kHkBEkz6pxWWtnVBg4L8HN5RePzuPSeGgL5ImSOCH/FdPQ1/9p4HxIYseFDzIFXFAEz9QNFvXC/VR0jPYl6Q==}
+  '@wix/auto_sdk_members_members-about@1.0.36':
+    resolution: {integrity: sha512-xyVWandHCG7vlOrbpi7D20opM/IiNIgqHv5sptbj3I8Lf+E8k1TsKvbwuoA1H2b3EdGV6V1t+GAN7laAR9+r3w==}
 
-  '@wix/auto_sdk_members_members@1.0.74':
-    resolution: {integrity: sha512-outoj2tmsWWNYFfWbuuiMP0ylrHdEdD0EA8I02txFsG/O4DeIZlCbjxqSlkyw9tO2ZUWsoFaHsh8hxV4HnD+IQ==}
+  '@wix/auto_sdk_members_members@1.0.84':
+    resolution: {integrity: sha512-p3Hl9J4Np6A/Be/5XhSn5LnVpaRsis9i8otRD4XSoVU4EJQlLTL3PeKSQpypL+uxf9lHd0AALYDLtps2jdu3Qg==}
 
-  '@wix/auto_sdk_members_user-member@1.0.28':
-    resolution: {integrity: sha512-liPqyl7DKOqRCVE8+P3M+8vn4ngBWbq6kossKT+LSu+mujiaSnRQKG0CMSZCbQS7jptIAr4NMjGPPUL/f1w8Hw==}
+  '@wix/auto_sdk_members_user-member@1.0.30':
+    resolution: {integrity: sha512-QAkPp0hJI1ClSzb7WEPrJovvjkYpfPmtbWZsRyhdu4d/o8P7vefzhhB2xtKxMnQ5GncyczewLlNUeF5elJEAzA==}
 
   '@wix/auto_sdk_redirects_redirects@1.0.25':
     resolution: {integrity: sha512-gkxoKZrq1WLRgPoKUod20i+TusXyBccWNt0ScGsfgrG6nGZYs0GS5g1wGZzFJugbjp/3HbnOpjvfXxgCZmuFnQ==}
@@ -1371,8 +1379,8 @@ packages:
   '@wix/auto_sdk_stores_wishlist@1.0.20':
     resolution: {integrity: sha512-Gfit07f9dKGFTufZT5TS6nsUWTxZj7kmAZP5OhtjK/p1W46gUCpbqioyW1h68J8O5BB5qi06Yw9vHrgWzWg7fA==}
 
-  '@wix/ecom@1.0.1432':
-    resolution: {integrity: sha512-S3gaobZUgaXwaRdJi/8NXpzm6A+F+2cokgqKw3RhpiW4uUztyFXKzIZerDahr3jbM1o5gVDtJWu6RHkSWQ/wFA==}
+  '@wix/ecom@1.0.1433':
+    resolution: {integrity: sha512-CJdYqSCQOpi87DMsksZELqaIC+rQmbHLnDnYstWnv3xXk1E7AVP1MFGjRjDAj8ar97Aj+q/P6vh0b2mIhxL+mQ==}
 
   '@wix/ecom_app-extensions@1.0.90':
     resolution: {integrity: sha512-zE3xXx+rxr7lHtfOnPpqnWmHR3xFdh89UuqenJjlZZh4reB9rAvFaVmd0nAwXtPL++v4jJY2gx9DoNyrt4lGdQ==}
@@ -1430,8 +1438,8 @@ packages:
   '@wix/image-kit@1.113.0':
     resolution: {integrity: sha512-5hrHA8+peRjxp9uSgeyQCvxArWN+x0T17vhrQtY6KzoqrCIUMJtdxOkNfoXjL7JpMrIoB/5luyRR0d5KfB7tmA==}
 
-  '@wix/members@1.0.330':
-    resolution: {integrity: sha512-0ZowY6rruTcbgyYxxAS+3SKoCabT+ypdTQ5dut6AQ4dwuOTE/SZMEvp6B+6cHdnr3cZZ3GTydY8PU+wq5rJidg==}
+  '@wix/members@1.0.365':
+    resolution: {integrity: sha512-XC4PqUXTLZLZtYtw07rYvBcczDs5YlURfwc5FnZrAPp8AIqNE5Gy+mn1GDHL5pA7XqQB4TeBml9AqiWqCJoQYg==}
 
   '@wix/monitoring-types@0.12.0':
     resolution: {integrity: sha512-nlv4jwQMewjzPIWFF9rnKf9WhVojj67oLtvilYXfi+lnhXyVlYOfqCnL3qLJuKtJ6wT5XIJdt0Fj0su2NM5taQ==}
@@ -2704,10 +2712,12 @@ packages:
 
   queue-microtask@1.2.3:
     resolution: {integrity: sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==}
+
   react-dom@19.2.0:
     resolution: {integrity: sha512-UlbRu4cAiGaIewkPyiRGJk0imDN2T3JjieT6spoL2UeSf5od4n5LB/mQ4ejmxhCFT1tYe8IvaFulzynWovsEFQ==}
     peerDependencies:
       react: ^19.2.0
+
   react-is@16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
 
@@ -3362,7 +3372,7 @@ snapshots:
       '@floating-ui/core': 1.7.3
       '@floating-ui/utils': 0.2.10
 
-'@floating-ui/react-dom@2.1.6(react-dom@19.2.0(react@19.2.0))(react@19.2.0)':
+  '@floating-ui/react-dom@2.1.6(react-dom@19.2.0(react@19.2.0))(react@19.2.0)':
     dependencies:
       '@floating-ui/dom': 1.7.4
       react: 19.2.0
@@ -3587,7 +3597,6 @@ snapshots:
       '@radix-ui/react-primitive': 2.1.3(@types/react-dom@19.1.9(@types/react@19.1.15))(@types/react@19.1.15)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       react: 19.2.0
       react-dom: 19.2.0(react@19.2.0)
-
     optionalDependencies:
       '@types/react': 19.1.15
       '@types/react-dom': 19.1.9(@types/react@19.1.15)
@@ -3600,7 +3609,6 @@ snapshots:
       '@radix-ui/react-slot': 1.2.3(@types/react@19.1.15)(react@19.2.0)
       react: 19.2.0
       react-dom: 19.2.0(react@19.2.0)
-
     optionalDependencies:
       '@types/react': 19.1.15
       '@types/react-dom': 19.1.9(@types/react@19.1.15)
@@ -3632,7 +3640,6 @@ snapshots:
       '@radix-ui/react-use-escape-keydown': 1.1.1(@types/react@19.1.15)(react@19.2.0)
       react: 19.2.0
       react-dom: 19.2.0(react@19.2.0)
-      
     optionalDependencies:
       '@types/react': 19.1.15
       '@types/react-dom': 19.1.9(@types/react@19.1.15)
@@ -3675,7 +3682,6 @@ snapshots:
       '@radix-ui/rect': 1.1.1
       react: 19.2.0
       react-dom: 19.2.0(react@19.2.0)
-
     optionalDependencies:
       '@types/react': 19.1.15
       '@types/react-dom': 19.1.9(@types/react@19.1.15)
@@ -3686,7 +3692,6 @@ snapshots:
       '@radix-ui/react-use-layout-effect': 1.1.1(@types/react@19.1.15)(react@19.2.0)
       react: 19.2.0
       react-dom: 19.2.0(react@19.2.0)
-
     optionalDependencies:
       '@types/react': 19.1.15
       '@types/react-dom': 19.1.9(@types/react@19.1.15)
@@ -3696,7 +3701,6 @@ snapshots:
       '@radix-ui/react-slot': 1.2.3(@types/react@19.1.15)(react@19.2.0)
       react: 19.2.0
       react-dom: 19.2.0(react@19.2.0)
-      
     optionalDependencies:
       '@types/react': 19.1.15
       '@types/react-dom': 19.1.9(@types/react@19.1.15)
@@ -3714,7 +3718,6 @@ snapshots:
       '@radix-ui/react-use-controllable-state': 1.2.2(@types/react@19.1.15)(react@19.2.0)
       react: 19.2.0
       react-dom: 19.2.0(react@19.2.0)
-
     optionalDependencies:
       '@types/react': 19.1.15
       '@types/react-dom': 19.1.9(@types/react@19.1.15)
@@ -3744,7 +3747,6 @@ snapshots:
       react: 19.2.0
       react-dom: 19.2.0(react@19.2.0)
       react-remove-scroll: 2.7.1(@types/react@19.1.15)(react@19.2.0)
-
     optionalDependencies:
       '@types/react': 19.1.15
       '@types/react-dom': 19.1.9(@types/react@19.1.15)
@@ -3764,7 +3766,6 @@ snapshots:
       '@radix-ui/react-use-size': 1.1.1(@types/react@19.1.15)(react@19.2.0)
       react: 19.2.0
       react-dom: 19.2.0(react@19.2.0)
-
     optionalDependencies:
       '@types/react': 19.1.15
       '@types/react-dom': 19.1.9(@types/react@19.1.15)
@@ -3787,7 +3788,6 @@ snapshots:
       '@radix-ui/react-use-controllable-state': 1.2.2(@types/react@19.1.15)(react@19.2.0)
       react: 19.2.0
       react-dom: 19.2.0(react@19.2.0)
-      
     optionalDependencies:
       '@types/react': 19.1.15
       '@types/react-dom': 19.1.9(@types/react@19.1.15)
@@ -3799,7 +3799,6 @@ snapshots:
       '@radix-ui/react-use-controllable-state': 1.2.2(@types/react@19.1.15)(react@19.2.0)
       react: 19.2.0
       react-dom: 19.2.0(react@19.2.0)
-      
     optionalDependencies:
       '@types/react': 19.1.15
       '@types/react-dom': 19.1.9(@types/react@19.1.15)
@@ -3863,7 +3862,6 @@ snapshots:
       '@radix-ui/react-primitive': 2.1.3(@types/react-dom@19.1.9(@types/react@19.1.15))(@types/react@19.1.15)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       react: 19.2.0
       react-dom: 19.2.0(react@19.2.0)
-
     optionalDependencies:
       '@types/react': 19.1.15
       '@types/react-dom': 19.1.9(@types/react@19.1.15)
@@ -4161,7 +4159,7 @@ snapshots:
       '@wix/sdk-runtime': 0.5.0
       '@wix/sdk-types': 1.14.0
 
-  '@wix/auto_sdk_ecom_cart-v-2@1.0.33':
+  '@wix/auto_sdk_ecom_cart-v-2@1.0.34':
     dependencies:
       '@wix/sdk-runtime': 0.5.0
       '@wix/sdk-types': 1.14.0
@@ -4191,6 +4189,11 @@ snapshots:
       '@wix/sdk-runtime': 0.5.0
       '@wix/sdk-types': 1.14.0
 
+  '@wix/auto_sdk_ecom_checkout@1.0.81':
+    dependencies:
+      '@wix/sdk-runtime': 0.5.0
+      '@wix/sdk-types': 1.14.0
+
   '@wix/auto_sdk_ecom_checkout@1.0.84':
     dependencies:
       '@wix/sdk-runtime': 0.5.0
@@ -4201,7 +4204,12 @@ snapshots:
       '@wix/sdk-runtime': 0.5.0
       '@wix/sdk-types': 1.14.0
 
-  '@wix/auto_sdk_ecom_current-cart-v-2@1.0.33':
+  '@wix/auto_sdk_ecom_current-cart-v-2@1.0.34':
+    dependencies:
+      '@wix/sdk-runtime': 0.5.0
+      '@wix/sdk-types': 1.14.0
+
+  '@wix/auto_sdk_ecom_current-cart@1.0.87':
     dependencies:
       '@wix/sdk-runtime': 0.5.0
       '@wix/sdk-types': 1.14.0
@@ -4421,17 +4429,27 @@ snapshots:
       '@wix/sdk-runtime': 0.5.0
       '@wix/sdk-types': 1.14.0
 
-  '@wix/auto_sdk_members_authorization@1.0.19':
+  '@wix/auto_sdk_members_authorization@1.0.20':
     dependencies:
       '@wix/sdk-runtime': 0.5.0
       '@wix/sdk-types': 1.14.0
 
-  '@wix/auto_sdk_members_badges@1.0.26':
+  '@wix/auto_sdk_members_badge-assignments@1.0.4':
     dependencies:
       '@wix/sdk-runtime': 0.5.0
       '@wix/sdk-types': 1.14.0
 
-  '@wix/auto_sdk_members_custom-field-applications@1.0.21':
+  '@wix/auto_sdk_members_badges-v-2@1.0.5':
+    dependencies:
+      '@wix/sdk-runtime': 0.5.0
+      '@wix/sdk-types': 1.14.0
+
+  '@wix/auto_sdk_members_badges@1.0.32':
+    dependencies:
+      '@wix/sdk-runtime': 0.5.0
+      '@wix/sdk-types': 1.14.0
+
+  '@wix/auto_sdk_members_custom-field-applications@1.0.24':
     dependencies:
       '@wix/sdk-runtime': 0.5.0
       '@wix/sdk-types': 1.14.0
@@ -4441,7 +4459,7 @@ snapshots:
       '@wix/sdk-runtime': 0.5.0
       '@wix/sdk-types': 1.14.0
 
-  '@wix/auto_sdk_members_custom-fields@1.0.29':
+  '@wix/auto_sdk_members_custom-fields@1.0.33':
     dependencies:
       '@wix/sdk-runtime': 0.5.0
       '@wix/sdk-types': 1.14.0
@@ -4456,7 +4474,7 @@ snapshots:
       '@wix/sdk-runtime': 0.5.0
       '@wix/sdk-types': 1.14.0
 
-  '@wix/auto_sdk_members_member-privacy-settings@1.0.31':
+  '@wix/auto_sdk_members_member-privacy-settings@1.0.34':
     dependencies:
       '@wix/sdk-runtime': 0.5.0
       '@wix/sdk-types': 1.14.0
@@ -4466,7 +4484,7 @@ snapshots:
       '@wix/sdk-runtime': 0.5.0
       '@wix/sdk-types': 1.14.0
 
-  '@wix/auto_sdk_members_member-role-definition@1.0.25':
+  '@wix/auto_sdk_members_member-role-definition@1.0.27':
     dependencies:
       '@wix/sdk-runtime': 0.5.0
       '@wix/sdk-types': 1.14.0
@@ -4476,17 +4494,17 @@ snapshots:
       '@wix/sdk-runtime': 0.5.0
       '@wix/sdk-types': 1.14.0
 
-  '@wix/auto_sdk_members_members-about@1.0.32':
+  '@wix/auto_sdk_members_members-about@1.0.36':
     dependencies:
       '@wix/sdk-runtime': 0.5.0
       '@wix/sdk-types': 1.14.0
 
-  '@wix/auto_sdk_members_members@1.0.74':
+  '@wix/auto_sdk_members_members@1.0.84':
     dependencies:
       '@wix/sdk-runtime': 0.5.0
       '@wix/sdk-types': 1.14.0
 
-  '@wix/auto_sdk_members_user-member@1.0.28':
+  '@wix/auto_sdk_members_user-member@1.0.30':
     dependencies:
       '@wix/sdk-runtime': 0.5.0
       '@wix/sdk-types': 1.14.0
@@ -4576,15 +4594,14 @@ snapshots:
       '@wix/sdk-runtime': 0.5.0
       '@wix/sdk-types': 1.14.0
 
-  '@wix/ecom@1.0.1432(@types/react@19.1.15)(@wix/headless-components@0.0.13(@types/react-dom@19.1.9(@types/react@19.1.15))(@types/react@19.1.15)(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react@19.1.1)(use-sync-external-store@1.5.0(react@19.1.1))':
-
+  '@wix/ecom@1.0.1433(@types/react@19.1.15)(@wix/headless-components@0.0.13(@types/react-dom@19.1.9(@types/react@19.1.15))(@types/react@19.1.15)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))(react@19.2.0)(use-sync-external-store@1.5.0(react@19.2.0))':
     dependencies:
       '@wix/auto_sdk_ecom_abandoned-checkouts': 1.0.46
       '@wix/auto_sdk_ecom_additional-fees': 1.0.29
       '@wix/auto_sdk_ecom_back-in-stock-notifications': 1.0.37
       '@wix/auto_sdk_ecom_back-in-stock-settings': 1.0.28
       '@wix/auto_sdk_ecom_cart': 1.0.89
-      '@wix/auto_sdk_ecom_cart-v-2': 1.0.33
+      '@wix/auto_sdk_ecom_cart-v-2': 1.0.34
       '@wix/auto_sdk_ecom_catalog': 1.0.32
       '@wix/auto_sdk_ecom_checkout': 1.0.84
       '@wix/auto_sdk_ecom_checkout-content': 1.0.23
@@ -4592,7 +4609,7 @@ snapshots:
       '@wix/auto_sdk_ecom_checkout-templates': 1.0.72
       '@wix/auto_sdk_ecom_currencies': 1.0.23
       '@wix/auto_sdk_ecom_current-cart': 1.0.90
-      '@wix/auto_sdk_ecom_current-cart-v-2': 1.0.33
+      '@wix/auto_sdk_ecom_current-cart-v-2': 1.0.34
       '@wix/auto_sdk_ecom_custom-triggers': 1.0.22
       '@wix/auto_sdk_ecom_delivery-profile': 1.0.75
       '@wix/auto_sdk_ecom_delivery-solutions': 1.0.36
@@ -4630,10 +4647,8 @@ snapshots:
       '@wix/auto_sdk_ecom_tips': 1.0.39
       '@wix/auto_sdk_ecom_totals-calculator': 1.0.59
       '@wix/auto_sdk_ecom_validations': 1.0.29
-
       '@wix/ecom_app-extensions': 1.0.90
-      '@wix/headless-ecom': 0.0.31(@types/react@19.1.15)(@wix/headless-components@0.0.13(@types/react-dom@19.1.9(@types/react@19.1.15))(@types/react@19.1.15)(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react@19.1.1)(use-sync-external-store@1.5.0(react@19.1.1))
-
+      '@wix/headless-ecom': 0.0.31(@types/react@19.1.15)(@wix/headless-components@0.0.13(@types/react-dom@19.1.9(@types/react@19.1.15))(@types/react@19.1.15)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))(react@19.2.0)(use-sync-external-store@1.5.0(react@19.2.0))
     transitivePeerDependencies:
       - '@types/react'
       - '@wix/headless-components'
@@ -4687,21 +4702,19 @@ snapshots:
       '@radix-ui/react-slider': 1.3.6(@types/react-dom@19.1.9(@types/react@19.1.15))(@types/react@19.1.15)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       '@radix-ui/react-toggle-group': 1.1.11(@types/react-dom@19.1.9(@types/react@19.1.15))(@types/react@19.1.15)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       '@wix/headless-utils': 0.0.3(@types/react@19.1.15)(react@19.2.0)
-      
     transitivePeerDependencies:
       - '@types/react'
       - '@types/react-dom'
       - react
       - react-dom
 
-  '@wix/headless-ecom@0.0.31(@types/react@19.1.15)(@wix/headless-components@0.0.13(@types/react-dom@19.1.9(@types/react@19.1.15))(@types/react@19.1.15)(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react@19.1.1)(use-sync-external-store@1.5.0(react@19.1.1))':
+  '@wix/headless-ecom@0.0.31(@types/react@19.1.15)(@wix/headless-components@0.0.13(@types/react-dom@19.1.9(@types/react@19.1.15))(@types/react@19.1.15)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))(react@19.2.0)(use-sync-external-store@1.5.0(react@19.2.0))':
     dependencies:
-      '@radix-ui/react-slot': 1.2.3(@types/react@19.1.15)(react@19.1.1)
-      '@wix/auto_sdk_ecom_checkout': 1.0.84
-      '@wix/auto_sdk_ecom_current-cart': 1.0.90
-      '@wix/headless-components': 0.0.13(@types/react-dom@19.1.9(@types/react@19.1.15))(@types/react@19.1.15)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
-      '@wix/headless-media': 0.0.14(react@19.1.1)(use-sync-external-store@1.5.0(react@19.1.1))
-
+      '@radix-ui/react-slot': 1.2.3(@types/react@19.1.15)(react@19.2.0)
+      '@wix/auto_sdk_ecom_checkout': 1.0.81
+      '@wix/auto_sdk_ecom_current-cart': 1.0.87
+      '@wix/headless-components': 0.0.13(@types/react-dom@19.1.9(@types/react@19.1.15))(@types/react@19.1.15)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
+      '@wix/headless-media': 0.0.14(react@19.2.0)(use-sync-external-store@1.5.0(react@19.2.0))
       '@wix/redirects': 1.0.97
       '@wix/sdk': 1.17.1
       '@wix/services-definitions': 0.1.5
@@ -4720,8 +4733,7 @@ snapshots:
       - react
       - use-sync-external-store
 
-  '@wix/headless-stores@0.0.93(@types/react@19.1.15)(@wix/headless-components@0.0.13(@types/react-dom@19.1.9(@types/react@19.1.15))(@types/react@19.1.15)(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react@19.1.1)(typescript@5.9.2)(use-sync-external-store@1.5.0(react@19.1.1))':
-
+  '@wix/headless-stores@0.0.93(@types/react@19.1.15)(@wix/headless-components@0.0.13(@types/react-dom@19.1.9(@types/react@19.1.15))(@types/react@19.1.15)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))(react@19.2.0)(typescript@5.9.2)(use-sync-external-store@1.5.0(react@19.2.0))':
     dependencies:
       '@radix-ui/react-slot': 1.2.3(@types/react@19.1.15)(react@19.2.0)
       '@wix/auto_sdk_bookings_availability-calendar': 1.0.172
@@ -4730,14 +4742,12 @@ snapshots:
       '@wix/auto_sdk_stores_inventory-items-v-3': 1.0.39
       '@wix/auto_sdk_stores_products-v-3': 1.0.67
       '@wix/auto_sdk_stores_read-only-variants-v-3': 1.0.31
-
-      '@wix/ecom': 1.0.1432(@types/react@19.1.15)(@wix/headless-components@0.0.13(@types/react-dom@19.1.9(@types/react@19.1.15))(@types/react@19.1.15)(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react@19.1.1)(use-sync-external-store@1.5.0(react@19.1.1))
+      '@wix/ecom': 1.0.1433(@types/react@19.1.15)(@wix/headless-components@0.0.13(@types/react-dom@19.1.9(@types/react@19.1.15))(@types/react@19.1.15)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))(react@19.2.0)(use-sync-external-store@1.5.0(react@19.2.0))
       '@wix/essentials': 0.1.28(typescript@5.9.2)
-      '@wix/headless-components': 0.0.13(@types/react-dom@19.1.9(@types/react@19.1.15))(@types/react@19.1.15)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
-      '@wix/headless-ecom': 0.0.31(@types/react@19.1.15)(@wix/headless-components@0.0.13(@types/react-dom@19.1.9(@types/react@19.1.15))(@types/react@19.1.15)(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react@19.1.1)(use-sync-external-store@1.5.0(react@19.1.1))
-      '@wix/headless-media': 0.0.14(react@19.1.1)(use-sync-external-store@1.5.0(react@19.1.1))
-      '@wix/headless-utils': 0.0.3(@types/react@19.1.15)(react@19.1.1)
-
+      '@wix/headless-components': 0.0.13(@types/react-dom@19.1.9(@types/react@19.1.15))(@types/react@19.1.15)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
+      '@wix/headless-ecom': 0.0.31(@types/react@19.1.15)(@wix/headless-components@0.0.13(@types/react-dom@19.1.9(@types/react@19.1.15))(@types/react@19.1.15)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))(react@19.2.0)(use-sync-external-store@1.5.0(react@19.2.0))
+      '@wix/headless-media': 0.0.14(react@19.2.0)(use-sync-external-store@1.5.0(react@19.2.0))
+      '@wix/headless-utils': 0.0.3(@types/react@19.1.15)(react@19.2.0)
       '@wix/redirects': 1.0.97
       '@wix/services-definitions': 0.1.5
       '@wix/services-manager-react': 0.1.27(react@19.2.0)(use-sync-external-store@1.5.0(react@19.2.0))
@@ -4767,23 +4777,25 @@ snapshots:
       '@babel/runtime': 7.28.4
       tslib: 2.8.1
 
-  '@wix/members@1.0.330':
+  '@wix/members@1.0.365':
     dependencies:
       '@wix/auto_sdk_members_authentication': 1.0.25
-      '@wix/auto_sdk_members_authorization': 1.0.19
-      '@wix/auto_sdk_members_badges': 1.0.26
-      '@wix/auto_sdk_members_custom-field-applications': 1.0.21
+      '@wix/auto_sdk_members_authorization': 1.0.20
+      '@wix/auto_sdk_members_badge-assignments': 1.0.4
+      '@wix/auto_sdk_members_badges': 1.0.32
+      '@wix/auto_sdk_members_badges-v-2': 1.0.5
+      '@wix/auto_sdk_members_custom-field-applications': 1.0.24
       '@wix/auto_sdk_members_custom-field-suggestions': 1.0.18
-      '@wix/auto_sdk_members_custom-fields': 1.0.29
+      '@wix/auto_sdk_members_custom-fields': 1.0.33
       '@wix/auto_sdk_members_default-privacy': 1.0.20
       '@wix/auto_sdk_members_member-followers': 1.0.22
-      '@wix/auto_sdk_members_member-privacy-settings': 1.0.31
+      '@wix/auto_sdk_members_member-privacy-settings': 1.0.34
       '@wix/auto_sdk_members_member-report': 1.0.23
-      '@wix/auto_sdk_members_member-role-definition': 1.0.25
+      '@wix/auto_sdk_members_member-role-definition': 1.0.27
       '@wix/auto_sdk_members_member-to-member-block': 1.0.19
-      '@wix/auto_sdk_members_members': 1.0.74
-      '@wix/auto_sdk_members_members-about': 1.0.32
-      '@wix/auto_sdk_members_user-member': 1.0.28
+      '@wix/auto_sdk_members_members': 1.0.84
+      '@wix/auto_sdk_members_members-about': 1.0.36
+      '@wix/auto_sdk_members_user-member': 1.0.30
 
   '@wix/monitoring-types@0.12.0': {}
 
@@ -4855,7 +4867,6 @@ snapshots:
       '@wix/services-definitions': 0.1.5
 
   '@wix/stores@1.0.531(@types/react@19.1.15)(@wix/headless-components@0.0.13(@types/react-dom@19.1.9(@types/react@19.1.15))(@types/react@19.1.15)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))(react@19.2.0)(typescript@5.9.2)(use-sync-external-store@1.5.0(react@19.2.0))':
-
     dependencies:
       '@wix/auto_sdk_stores_abandoned-carts': 1.0.25
       '@wix/auto_sdk_stores_brands-v-3': 1.0.35
@@ -4873,9 +4884,7 @@ snapshots:
       '@wix/auto_sdk_stores_stores-locations-v-3': 1.0.25
       '@wix/auto_sdk_stores_subscription-options': 1.0.23
       '@wix/auto_sdk_stores_wishlist': 1.0.20
-
       '@wix/headless-stores': 0.0.93(@types/react@19.1.15)(@wix/headless-components@0.0.13(@types/react-dom@19.1.9(@types/react@19.1.15))(@types/react@19.1.15)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))(react@19.2.0)(typescript@5.9.2)(use-sync-external-store@1.5.0(react@19.2.0))
-
       '@wix/stores_app-extensions': 1.0.40
     transitivePeerDependencies:
       - '@types/react'
@@ -6080,17 +6089,14 @@ snapshots:
   natural-compare@1.4.0: {}
 
   next@15.5.0(react-dom@19.2.0(react@19.2.0))(react@19.2.0):
-
     dependencies:
       '@next/env': 15.5.0
       '@swc/helpers': 0.5.15
       caniuse-lite: 1.0.30001745
       postcss: 8.4.31
-      
       react: 19.2.0
       react-dom: 19.2.0(react@19.2.0)
       styled-jsx: 5.1.6(react@19.2.0)
-
     optionalDependencies:
       '@next/swc-darwin-arm64': 15.5.0
       '@next/swc-darwin-x64': 15.5.0
@@ -6236,7 +6242,6 @@ snapshots:
   queue-microtask@1.2.3: {}
 
   react-dom@19.2.0(react@19.2.0):
-
     dependencies:
       react: 19.2.0
       scheduler: 0.27.0
@@ -6776,8 +6781,8 @@ snapshots:
 
   yocto-queue@1.2.1: {}
 
-  zustand@5.0.8(@types/react@19.1.15)(react@19.1.1)(use-sync-external-store@1.5.0(react@19.1.1)):
+  zustand@5.0.8(@types/react@19.1.15)(react@19.2.0)(use-sync-external-store@1.5.0(react@19.2.0)):
     optionalDependencies:
       '@types/react': 19.1.15
-      react: 19.1.1
-      use-sync-external-store: 1.5.0(react@19.1.1)
+      react: 19.2.0
+      use-sync-external-store: 1.5.0(react@19.2.0)
