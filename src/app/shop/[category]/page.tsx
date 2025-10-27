@@ -14,6 +14,17 @@ interface SearchParams {
   sort?: string;
 }
 
+type SortableProductFields =
+  | "name"
+  | "priceData.price"
+  | "_id"
+  | "slug"
+  | "sku"
+  | "productType"
+  | "price"
+  | "numericId"
+  | "lastUpdated";
+
 const PRODUCT_PER_PAGE = 8;
 
 export default async function CategoryPage({
@@ -58,7 +69,8 @@ export default async function CategoryPage({
     );
 
   if (searchParams?.sort) {
-    const [sortType, sortBy] = searchParams.sort.split(" ");
+    const [sortType, sortByRaw] = searchParams.sort.split(" ");
+    const sortBy = sortByRaw as SortableProductFields;
     if (sortType === "asc") productQuery.ascending(sortBy);
     if (sortType === "desc") productQuery.descending(sortBy);
   }
