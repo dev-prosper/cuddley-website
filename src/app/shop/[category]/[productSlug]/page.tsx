@@ -33,9 +33,8 @@ export default async function ProductPage({
   // 🔹 Fetch the category name (optional)
   let collectionName = category;
   try {
-    const { collection } = await wixClient.collections.getCollectionBySlug(
-      category
-    );
+    const { collection } =
+      await wixClient.collections.getCollectionBySlug(category);
     if (collection?.name) collectionName = collection.name;
   } catch (err) {
     console.warn("⚠️ Failed to fetch collection name:", err);
@@ -91,7 +90,7 @@ export default async function ProductPage({
             Shipping Information
           </p>
           <p className="pt-1 pl-4 text-white text-[16px] font-inter">
-            Ships within 5–7 business days. Free shipping on orders over
+            Ships within 5-7 business days. Free shipping on orders over
             ₦700,000. Returns accepted within 30 days of delivery.
           </p>
         </section>
