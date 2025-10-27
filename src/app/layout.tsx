@@ -46,9 +46,9 @@ export default async function RootLayout({
     console.log("Fetched categories:", catsResponse.items);
     cats = catsResponse.items.map(
       (cat): Category => ({
-        _id: cat._id,
-        slug: cat.slug,
-        name: cat.name,
+        _id: cat._id ?? "",
+        slug: cat.slug ?? "",
+        name: cat.name ?? "",
       }),
     );
   } catch (error) {
