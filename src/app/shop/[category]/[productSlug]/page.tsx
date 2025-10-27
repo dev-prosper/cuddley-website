@@ -62,10 +62,14 @@ export default async function ProductPage({
           <p className="w-full pt-1 pl-4 font-inter text-[14px] text-[#9EA3B8]">
             ₦{product.priceData?.price?.toLocaleString() || "—"}
           </p>
-          <p className="pt-1 pl-4 w-full font-inter text-[16px] text-white leading-relaxed">
-            {product.description ||
-              "This product currently has no description."}
-          </p>
+          {product.description ? (
+            <div
+              dangerouslySetInnerHTML={{ __html: product.description }}
+              className="text-white px-4 py-6 leading-6"
+            />
+          ) : (
+            <p>This product currently has no description.</p>
+          )}
         </section>
 
         {/* Add to Cart */}

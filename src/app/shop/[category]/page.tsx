@@ -4,6 +4,8 @@ import { products } from "@wix/stores";
 import Image from "next/image";
 import Link from "next/link";
 import PageHeader from "@/components/shared/page-header";
+import { formatNumberWithCommas } from "@/helpers";
+import ProductCard from "@/components/shared/product-card";
 
 interface SearchParams {
   name?: string;
@@ -32,12 +34,17 @@ export default async function CategoryPage({
   searchParams,
 }: {
   params: { category: string };
-  searchParams: SearchParams;
+  searchParams: Promise<SearchParams>;
 }) {
+  const [resolvedParams, resolvedSearchParams] = await Promise.all([
+    params,
+    searchParams,
+  ]);
+
   const wixClient = await wixClientServer();
 
   // 🔹 Get the slug from the URL (e.g. "sofa-set")
-  const categorySlug = params.category;
+  const categorySlug = resolvedParams.category;
 
   // 🔹 Fetch the category details by slug
   const allCollections = await wixClient.collections.queryCollections().find();
@@ -55,21 +62,25 @@ export default async function CategoryPage({
   // 🔹 Now query products that belong to this category
   const productQuery = wixClient.products
     .queryProducts()
-    .startsWith("name", searchParams?.name || "")
+    .startsWith("name", resolvedSearchParams?.name || "")
     .hasSome("collectionIds", [collection._id]) // ✅ correct filter
     .hasSome(
       "productType",
-      searchParams?.type ? [searchParams.type] : ["physical", "digital"],
+      resolvedSearchParams?.type
+        ? [resolvedSearchParams.type]
+        : ["physical", "digital"],
     )
-    .gt("priceData.price", searchParams?.min || 0)
-    .lt("priceData.price", searchParams?.max || 999999)
+    .gt("priceData.price", resolvedSearchParams?.min || 0)
+    .lt("priceData.price", resolvedSearchParams?.max || 999999)
     .limit(PRODUCT_PER_PAGE)
     .skip(
-      searchParams?.page ? parseInt(searchParams.page) * PRODUCT_PER_PAGE : 0,
+      resolvedSearchParams?.page
+        ? parseInt(resolvedSearchParams.page) * PRODUCT_PER_PAGE
+        : 0,
     );
 
-  if (searchParams?.sort) {
-    const [sortType, sortByRaw] = searchParams.sort.split(" ");
+  if (resolvedSearchParams?.sort) {
+    const [sortType, sortByRaw] = resolvedSearchParams.sort.split(" ");
     const sortBy = sortByRaw as SortableProductFields;
     if (sortType === "asc") productQuery.ascending(sortBy);
     if (sortType === "desc") productQuery.descending(sortBy);
@@ -90,16 +101,6 @@ export default async function CategoryPage({
   return (
     <div>
       <div className="pt-4 px-4 flex flex-row items-center">
-        {/* Back button
-        <Link href="/shop">
-          <BackMenu className="size-5 text-white" />
-        </Link>
-
-        Dynamic category name
-        <p className="text-center w-full text-[16px] font-inter font-bold text-white">
-          {collection.name}
-        </p> */}
-
         <PageHeader pageName={collection?.name} />
       </div>
 
@@ -111,25 +112,12 @@ export default async function CategoryPage({
             href={`/shop/${categorySlug}/${product.slug}`}
             className="space-y-3 flex flex-col"
           >
-            {/* Image */}
-            <div className="relative w-full h-64 md:h-96">
-              <Image
-                src={product.media?.mainMedia?.image?.url || "/product.png"}
-                alt={product.name || "Product"}
-                fill
-                className="object-cover rounded-[8px]"
-              />
-            </div>
-
-            {/* Details */}
-            <div>
-              <p className="text-[16px] font-medium font-noto-serif text-white">
-                {product.name}
-              </p>
-              <p className="font-roboto text-[14px] text-[#9EA3B8]">
-                ₦{product.priceData?.price}
-              </p>
-            </div>
+            <ProductCard
+              imgSrc={product.media?.mainMedia?.image?.url || "/product.png"}
+              productName={product.name || "Unnamed Product"}
+              productAlt={product.name || "Product"}
+              price={formatNumberWithCommas(product.priceData?.price)}
+            />
           </Link>
         ))}
       </section>
