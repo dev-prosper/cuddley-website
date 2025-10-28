@@ -29,41 +29,19 @@ type SortableProductFields =
 
 const PRODUCT_PER_PAGE = 10;
 
-export default async function CategoryPage({
-  params,
+export default async function ShopPage({
   searchParams,
 }: {
   params: { category: string };
   searchParams: Promise<SearchParams>;
 }) {
-  const [resolvedParams, resolvedSearchParams] = await Promise.all([
-    params,
-    searchParams,
-  ]);
-
+  const resolvedSearchParams = await searchParams;
   const wixClient = await wixClientServer();
 
-  // 🔹 Get the slug from the URL (e.g. "sofa-set")
-  const categorySlug = resolvedParams.category;
-
-  // 🔹 Fetch the category details by slug
-  const allCollections = await wixClient.collections.queryCollections().find();
-  const collection = allCollections.items.find((c) => c.slug === categorySlug);
-
-  // 🔸 Handle missing category
-  if (!collection) {
-    return (
-      <div className="text-center text-white py-10">
-        Category not found or unavailable.
-      </div>
-    );
-  }
-
-  // 🔹 Now query products that belong to this category
+  // 🔹 Query ALL products (no category filter)
   const productQuery = wixClient.products
     .queryProducts()
     .startsWith("name", resolvedSearchParams?.name || "")
-    .hasSome("collectionIds", [collection._id]) // ✅ correct filter
     .hasSome(
       "productType",
       resolvedSearchParams?.type
@@ -87,14 +65,10 @@ export default async function CategoryPage({
   }
 
   const res = await productQuery.find();
-  console.log(res);
 
-  // 🔹 If no products found
   if (!res.items.length) {
     return (
-      <div className="text-center text-white py-10">
-        No products found in {collection.name}.
-      </div>
+      <div className="text-center text-white py-10">No products found.</div>
     );
   }
 
@@ -102,7 +76,7 @@ export default async function CategoryPage({
   return (
     <div>
       <div className="pt-4 px-4 flex flex-row items-center">
-        <PageHeader pageName={collection?.name} />
+        <PageHeader pageName={"All Products"} />
       </div>
 
       {/* Product Grid */}
@@ -110,7 +84,7 @@ export default async function CategoryPage({
         {res.items.map((product: products.Product) => (
           <Link
             key={product._id}
-            href={`/shop/${categorySlug}/${product.slug}`}
+            href={`/all-products/${product.slug}`}
             className="space-y-3 flex flex-col"
           >
             <ProductCard
@@ -144,7 +118,7 @@ export default async function CategoryPage({
               {currentPage > 0 && (
                 <Link
                   href={{
-                    pathname: `/shop/${categorySlug}`,
+                    pathname: `/all-products`,
                     query: {
                       ...resolvedSearchParams,
                       page: String(currentPage - 1),
@@ -161,7 +135,7 @@ export default async function CategoryPage({
                 <Link
                   key={pageNum}
                   href={{
-                    pathname: `/shop/${categorySlug}`,
+                    pathname: `/all-products`,
                     query: { ...resolvedSearchParams, page: String(pageNum) },
                   }}
                   className={`px-3 text-sm py-1 rounded ${
@@ -178,7 +152,7 @@ export default async function CategoryPage({
               {currentPage < totalPages - 1 && (
                 <Link
                   href={{
-                    pathname: `/shop/${categorySlug}`,
+                    pathname: `/all-products`,
                     query: {
                       ...resolvedSearchParams,
                       page: String(currentPage + 1),

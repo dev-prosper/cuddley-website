@@ -22,7 +22,7 @@ const ProductImages = ({ items }: ProductImagesProps) => {
   }
 
   return (
-    <div className="">
+    <div className="px-4">
       <div className="h-[500px] relative">
         <Image
           src={items[index].image?.url || "/placeholder.jpg"}

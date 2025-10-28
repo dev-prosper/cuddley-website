@@ -13,7 +13,7 @@ export default function Hero() {
         </p>
 
         <Link
-          href="/shop"
+          href="/all-products"
           className="bg-[#1CC8F8] text-black font-extrabold rounded-lg text-center py-2.5 px-4 text-sm"
         >
           Shop Now

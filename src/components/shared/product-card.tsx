@@ -18,7 +18,7 @@ export default function ProductCard({
       <div className="relative h-60 w-full">
         <Image
           src={imgSrc}
-          alt={productAlt}
+          alt={productAlt || "Product Name"}
           fill
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
           className="object-cover rounded-xl h-full"
