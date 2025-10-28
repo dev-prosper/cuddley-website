@@ -1,7 +1,6 @@
 import React from "react";
 import { wixClientServer } from "@/lib/wixClientServer";
 import { products } from "@wix/stores";
-import Image from "next/image";
 import Link from "next/link";
 import PageHeader from "@/components/shared/page-header";
 import { formatNumberWithCommas } from "@/helpers";
