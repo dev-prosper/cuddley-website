@@ -15,6 +15,7 @@ export default function FeaturedProducts() {
         {FEATURED_PRODUCTS.map(({ productName, price, imgSrc }, index) => {
           return (
             <ProductCard
+              productAlt={productName}
               key={index}
               imgSrc={imgSrc}
               price={price}

@@ -43,7 +43,6 @@ export default async function RootLayout({
     // ✅ Fetch Wix categories on the server with error handling
     const wixClient = await wixClientServer();
     const catsResponse = await wixClient.collections.queryCollections().find();
-    console.log("Fetched categories:", catsResponse.items);
     cats = catsResponse.items.map(
       (cat): Category => ({
         _id: cat._id ?? "",

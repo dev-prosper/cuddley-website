@@ -2,7 +2,7 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   /* config options here */
-   images: {
+  images: {
     remotePatterns: [
       {
         protocol: "https",
@@ -15,6 +15,16 @@ const nextConfig: NextConfig = {
         pathname: "/**",
       },
     ],
+  },
+
+  async redirects() {
+    return [
+      {
+        source: "/shop",
+        destination: "/all-products",
+        permanent: true,
+      },
+    ];
   },
 };
 

@@ -8,7 +8,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <div className="text-white space-y-6 px-4 pt-20 pb-10">
+    <div className="text-white space-y-6 px-4 pt-6 pb-10">
       <div className="flex gap-5">
         <Link href="https://www.instagram.com/cuddleys_interiors/">
           <InstagramIcon className="size-6" />

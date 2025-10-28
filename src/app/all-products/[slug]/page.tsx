@@ -7,37 +7,38 @@ import ProductImages from "@/components/shared/ProductImage";
 export default async function ProductPage({
   params,
 }: {
-  params: { category: string; productSlug: string };
+  params: Promise<{ slug: string }>;
 }) {
   // ✅ Await wixClientServer since it's async
   const wixClient = await wixClientServer();
 
-  const { category, productSlug } = params;
+  const { slug } = await params;
+  console.log("Looking for product with slug:", slug);
 
+  let product;
   // 🔹 Fetch product by slug
-  const productQuery = await wixClient.products
-    .queryProducts()
-    .eq("slug", productSlug)
-    .find();
+  try {
+    const productQuery = await wixClient.products
+      .queryProducts()
+      .eq("slug", slug)
+      .find();
 
-  const product = productQuery.items[0];
+    product = productQuery.items[0];
+  } catch (error) {
+    console.error("Error fetching product by slug:", error);
+  }
+
+  if (!product) {
+    const allProducts = await wixClient.products.queryProducts().find();
+    product = allProducts.items.find((p) => p.slug === slug);
+  }
 
   if (!product) {
     return (
-      <div className="text-center text-white py-10">
-        Product not found or unavailable.
+      <div className="text-center text-white py-10 h-screen flex justify-center items-center">
+        <p>Product not found or unavailable.</p>
       </div>
     );
-  }
-
-  // 🔹 Fetch the category name (optional)
-  let collectionName = category;
-  try {
-    const { collection } =
-      await wixClient.collections.getCollectionBySlug(category);
-    if (collection?.name) collectionName = collection.name;
-  } catch (err) {
-    console.warn("⚠️ Failed to fetch collection name:", err);
   }
 
   return (
