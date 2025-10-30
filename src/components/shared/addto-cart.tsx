@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { wixClient } from "@/lib/wixClient";
+import { useCart } from "@/context/CartContext";
 
 type AddToCartProps = {
   productId: string;
@@ -14,10 +15,14 @@ type AddToCartProps = {
 
 export default function AddToCart({
   productId,
+  productName,
+  price,
+  imageUrl,
   quantity = 1,
   stockNumber,
 }: AddToCartProps) {
   const [isLoading, setIsLoading] = React.useState(false);
+  const { addToCart } = useCart();
 
   const isOutOfStock = stockNumber !== undefined && stockNumber <= 0;
 
@@ -25,7 +30,17 @@ export default function AddToCart({
     try {
       setIsLoading(true);
 
-      const cart = await wixClient.currentCart.addToCurrentCart({
+      // Add to local cart
+      addToCart({
+        _id: productId,
+        name: productName || "Unnamed Product",
+        price: price || 0,
+        image: imageUrl || "/images/placeholder.png",
+        quantity: quantity ?? 1,
+      });
+
+      // Optionally add to Wix cart too
+      await wixClient.currentCart.addToCurrentCart({
         lineItems: [
           {
             catalogReference: {
@@ -36,10 +51,8 @@ export default function AddToCart({
           },
         ],
       });
-
-      console.log(" Added to cart:", cart);
     } catch (err) {
-      console.error(" Failed to add to cart:", err);
+      console.error("❌ Failed to add to cart:", err);
     } finally {
       setIsLoading(false);
     }
