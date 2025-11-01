@@ -11,7 +11,7 @@ import {
   HamburgerIcon,
 } from "../icons";
 import { cn } from "@/lib/utils";
-import CartModal from "./CartModal"; // ✅ import your cart modal
+import { useCart } from "@/context/CartContext"; // ✅ import cart context
 
 type Category = {
   _id: string;
@@ -25,7 +25,12 @@ interface ClientNavbarProps {
 
 export default function ClientNavbar({ cats }: ClientNavbarProps) {
   const [isMobileNavbarOpen, setIsMobileNavbarOpen] = useState(false);
-  const [isCartOpen, setIsCartOpen] = useState(false); // ✅ add state for cart modal
+
+  // ✅ Access cart state from context
+  const { cart } = useCart();
+
+  // 🧮 Count total quantity in cart
+  const itemCount = cart.reduce((sum, item) => sum + item.quantity, 0);
 
   return (
     <header className="w-full max-w-[600px] flex flex-row justify-between px-4 pt-10 relative mx-auto">
@@ -40,16 +45,17 @@ export default function ClientNavbar({ cats }: ClientNavbarProps) {
       <div className="flex flex-row gap-4 items-center relative">
         <FavouriteIcon className="size-5 cursor-pointer text-white" />
 
-        {/* --- CART ICON & MODAL --- */}
+        {/* --- CART ICON --- */}
         <div className="relative">
-          <CartIcon
-            className="size-5 cursor-pointer text-white"
-            onClick={() => setIsCartOpen((prev) => !prev)} // ✅ toggle cart modal
-          />
-          {isCartOpen && (
-            <div className="absolute right-0 top-8 z-50">
-              <CartModal />
-            </div>
+          <Link href="/cart">
+            <CartIcon className="size-5 cursor-pointer text-white" />
+          </Link>
+
+          {/* --- CART BADGE --- */}
+          {itemCount > 0 && (
+            <span className="absolute -top-2 -right-2 bg-[#1CC8F8] text-black text-[10px] font-bold rounded-full w-4.5 h-4.5 flex items-center justify-center">
+              {itemCount > 9 ? "9+" : itemCount}
+            </span>
           )}
         </div>
 
@@ -64,7 +70,9 @@ export default function ClientNavbar({ cats }: ClientNavbarProps) {
         <div
           className={cn(
             "absolute top-0 left-0 overflow-y-auto w-full h-screen bg-[#0A0A11] pt-12 px-4.5 transform transition-transform duration-300 ease-in-out space-y-10 z-50",
-            isMobileNavbarOpen ? "translate-x-0 fixed" : "-translate-x-[2000px]"
+            isMobileNavbarOpen
+              ? "translate-x-0 fixed"
+              : "-translate-x-[2000px]",
           )}
         >
           {/* --- HEADER --- */}

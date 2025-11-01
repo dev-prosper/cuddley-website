@@ -5,6 +5,7 @@ import MaxWidthContainer from "@/components/shared/maxwidth-container";
 import ClientNavbar from "@/components/shared/ClientNavbar";
 import Footer from "@/components/shared/footer";
 import { wixClientServer } from "@/lib/wixClientServer";
+import { CartProvider } from "@/context/CartContext";
 
 const notoSerif = Noto_Serif({
   variable: "--font-noto-serif",
@@ -61,11 +62,13 @@ export default async function RootLayout({
       <body
         className={`${notoSerif.variable} ${roboto.variable} ${inter.variable} antialiased`}
       >
-        <MaxWidthContainer>
-          <ClientNavbar cats={cats} />
-          {children}
-          <Footer />
-        </MaxWidthContainer>
+        <CartProvider>
+          <MaxWidthContainer>
+            <ClientNavbar cats={cats} />
+            {children}
+            <Footer />
+          </MaxWidthContainer>
+        </CartProvider>
       </body>
     </html>
   );

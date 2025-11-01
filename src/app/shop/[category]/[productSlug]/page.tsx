@@ -76,9 +76,11 @@ export default async function ProductPage({
         <section>
           <AddToCart
             productId={product._id!}
-            productName={product.name ?? undefined}
-            price={product.priceData?.price ?? undefined}
-            imageUrl={product.media?.mainMedia?.image?.url || ""}
+            productName={product.name ?? "Unnamed Product"}
+            price={product.priceData?.price ?? 0}
+            imageUrl={
+              product.media?.mainMedia?.image?.url || "/images/placeholder.png"
+            }
             variantId="00000000-0000-0000-0000-000000000000"
             stockNumber={
               typeof product.stock?.quantity === "number"
