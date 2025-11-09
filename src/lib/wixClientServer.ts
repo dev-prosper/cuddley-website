@@ -38,7 +38,7 @@
 //   return wixClient;
 // };
 
-import { createClient, OAuthStrategy, RefreshToken } from "@wix/sdk";
+import { createClient, OAuthStrategy } from "@wix/sdk";
 import { cookies } from "next/headers";
 import { wixModules } from "./wixModules";
 
