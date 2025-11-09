@@ -4,24 +4,6 @@ import SectionHeading from "../shared/section-heading";
 import { wixClientServer } from "@/lib/wixClientServer";
 import type { products } from "@wix/stores";
 
-// interface Product {
-//   _id: string;
-//   slug: string;
-//   name: string;
-//   priceData?: {
-//     formatted?: {
-//       price?: string;
-//     };
-//   };
-//   media?: {
-//     mainMedia?: {
-//       image?: {
-//         url?: string;
-//       };
-//     };
-//   };
-// }
-
 export default async function FeaturedProducts() {
   const wixClient = await wixClientServer();
 
