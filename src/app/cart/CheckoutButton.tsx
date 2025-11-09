@@ -28,7 +28,7 @@ export default function CheckoutButton() {
   return (
     <button
       onClick={handleCheckout}
-      className="w-full bg-black text-white py-3 rounded-lg mt-4"
+      className="w-full bg-[#1CC8F8] text-white py-3 rounded-lg mt-4"
     >
       Proceed to Checkout
     </button>

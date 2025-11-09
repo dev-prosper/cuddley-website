@@ -200,7 +200,7 @@ export default function Page() {
                 <button
                   onClick={handleCheckout}
                   disabled={loading}
-                  className="w-full bg-black text-white py-3 rounded-lg mt-4 cursor-pointer disabled:opacity-60"
+                  className="w-full bg-[#1CC8F8] font-medium text-white py-3 rounded-lg mt-4 cursor-pointer disabled:opacity-60"
                 >
                   {loading ? "Processing..." : "Proceed to Checkout"}
                 </button>
