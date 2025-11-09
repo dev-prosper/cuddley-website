@@ -2,6 +2,25 @@ import Link from "next/link";
 import ProductCard from "../shared/product-card";
 import SectionHeading from "../shared/section-heading";
 import { wixClientServer } from "@/lib/wixClientServer";
+import type { products } from "@wix/stores";
+
+// interface Product {
+//   _id: string;
+//   slug: string;
+//   name: string;
+//   priceData?: {
+//     formatted?: {
+//       price?: string;
+//     };
+//   };
+//   media?: {
+//     mainMedia?: {
+//       image?: {
+//         url?: string;
+//       };
+//     };
+//   };
+// }
 
 export default async function FeaturedProducts() {
   const wixClient = await wixClientServer();
@@ -15,7 +34,10 @@ export default async function FeaturedProducts() {
   const featuredCollection = collectionRes.items[0];
 
   // Fetch products belonging to that collection
-  let featuredProducts: any[] = [];
+  // let featuredProducts: any[] = [];
+  // let featuredProducts: any[] = [];
+  let featuredProducts: products.Product[] = [];
+  // let featuredProducts: Product[] = [];
   if (featuredCollection) {
     const productsRes = await wixClient.products
       .queryProducts()
@@ -42,10 +64,10 @@ export default async function FeaturedProducts() {
               className="block"
             >
               <ProductCard
-                imgSrc={product.media?.mainMedia?.image?.url}
-                price={product.priceData?.formatted?.price}
-                productName={product.name}
-                productAlt={product.name}
+                imgSrc={product.media?.mainMedia?.image?.url ?? ""}
+                price={product.priceData?.formatted?.price ?? ""}
+                productName={product.name ?? ""}
+                productAlt={product.name ?? ""}
               />
             </Link>
           ))
