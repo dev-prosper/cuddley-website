@@ -1,5 +1,5 @@
 "use client";
-
+export const dynamic = "force-dynamic";
 import React, { useMemo, useState } from "react";
 import PageHeader from "@/components/shared/page-header";
 import Image from "next/image";
