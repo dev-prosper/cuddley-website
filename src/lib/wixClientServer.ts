@@ -5,6 +5,8 @@ import { cookies } from "next/headers";
 import { members } from "@wix/members";
 import { redirects } from "@wix/redirects";
 
+export const dynamic = "force-dynamic";
+
 export const wixClientServer = async () => {
   let refreshToken;
 
