@@ -8,38 +8,72 @@ import { useCart } from "@/context/CartContext";
 export default function Page() {
   const { cart, updateQuantity, removeFromCart } = useCart();
   const [paymentMethod, setPaymentMethod] = useState("debit-card");
+  const [loading, setLoading] = useState(false);
 
-  // 🧾 Subtotal, shipping, and totals
   const subtotal = useMemo(
     () =>
       cart.reduce((sum, product) => sum + product.price * product.quantity, 0),
     [cart],
   );
-
   const shipping = subtotal >= 500000 ? 0 : 20000;
   const tax = 5000;
   const total = subtotal + shipping + tax;
 
   const formatPrice = (amount: number) => `₦${amount.toLocaleString("en-NG")}`;
 
+  // 🛒 Checkout flow
+  const handleCheckout = async () => {
+    try {
+      setLoading(true);
+
+      // Example user info — you can get this from your checkout form
+      const userEmail = "customer@example.com";
+      const shippingAddress = "123 Main Street, Lagos, Nigeria";
+
+      // Send to backend
+      const response = await fetch("/api/paystack/initialize", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email: userEmail,
+          amount: total,
+          metadata: {
+            cart,
+            shippingAddress,
+            paymentMethod,
+          },
+        }),
+      });
+
+      const data = await response.json();
+
+      if (data.status && data.data.authorization_url) {
+        window.location.href = data.data.authorization_url;
+      } else {
+        alert("Error initializing payment");
+        console.error(data);
+      }
+    } catch (error) {
+      console.error("Payment init error:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <div>
-      {/* Header */}
       <header className="px-4 pt-10 pb-2">
         <PageHeader pageName="Cart" />
       </header>
 
       <main>
-        {/* Cart Items */}
         <section>
           {cart.length > 0 ? (
             cart.map((product, index) => (
               <div
-                // ✅ Use product._id if available, fallback to index to avoid warning
                 key={product._id ?? index}
                 className="w-full h-18 py-2 px-4 flex justify-between items-center"
               >
-                {/* Product Info */}
                 <div className="min-w-[237px] w-full max-w-[437px] flex flex-row gap-4">
                   <Image
                     src={product.image}
@@ -48,7 +82,6 @@ export default function Page() {
                     height={56}
                     className="object-contain rounded-[8px]"
                   />
-
                   <div className="flex flex-col justify-center">
                     <span className="font-roboto text-[16px] text-white font-medium">
                       {product.name}
@@ -59,7 +92,6 @@ export default function Page() {
                   </div>
                 </div>
 
-                {/* Quantity Controls */}
                 <div className="flex flex-row gap-2 items-center">
                   <button
                     onClick={() =>
@@ -86,14 +118,13 @@ export default function Page() {
               </div>
             ))
           ) : (
-            // ✅ Empty cart message (not inside a map, so no key needed)
             <div className="text-center text-gray-400 py-10">
               Your cart is empty 🛒
             </div>
           )}
         </section>
 
-        {/* Show the following only when cart has items */}
+        {/* Only show when cart has items */}
         {cart.length > 0 && (
           <>
             {/* Order Summary */}
@@ -131,63 +162,6 @@ export default function Page() {
               </div>
             </section>
 
-            {/* Shipping Information */}
-            <section>
-              <div className="w-full pt-4 pl-4">
-                <span className="font-bold text-white text-[18px]">
-                  Shipping Information
-                </span>
-              </div>
-
-              <div className="w-full py-3 px-4 flex flex-col gap-3">
-                <label className="text-white font-inter">Full Name</label>
-                <input
-                  type="text"
-                  placeholder="Liam Carter"
-                  required
-                  className="w-full h-14 bg-[#0C111E] p-4 rounded-[8px] border border-[#3D4254] text-[#9EA3B8]"
-                />
-              </div>
-
-              <div className="w-full py-3 px-4 flex flex-col gap-3">
-                <label className="text-white font-inter">Address</label>
-                <input
-                  type="text"
-                  placeholder="123 Main Str"
-                  required
-                  className="w-full h-14 bg-[#0C111E] p-4 rounded-[8px] border border-[#3D4254] text-[#9EA3B8]"
-                />
-              </div>
-
-              <div className="w-full py-3 px-4 flex flex-col gap-3">
-                <label className="text-white font-inter">Country</label>
-                <input
-                  type="text"
-                  value="Nigeria"
-                  disabled
-                  className="w-full h-14 bg-[#1A2238] p-4 rounded-[8px] border border-[#3D4254] text-[#9EA3B8] cursor-not-allowed"
-                />
-              </div>
-
-              <div className="w-full py-3 px-4 flex gap-3">
-                <div className="w-1/2 flex flex-col gap-2">
-                  <label className="text-white font-inter">State</label>
-                  <input
-                    type="text"
-                    className="w-full h-14 bg-[#0C111E] p-4 rounded-[8px] border border-[#3D4254] text-[#9EA3B8]"
-                  />
-                </div>
-
-                <div className="w-1/2 flex flex-col gap-2">
-                  <label className="text-white font-inter">Zip Code</label>
-                  <input
-                    type="text"
-                    className="w-full h-14 bg-[#0C111E] p-4 rounded-[8px] border border-[#3D4254] text-[#9EA3B8]"
-                  />
-                </div>
-              </div>
-            </section>
-
             {/* Payment Method */}
             <section>
               <div className="w-full px-4 pt-4 pb-2">
@@ -199,11 +173,10 @@ export default function Page() {
               <div className="w-full p-4 flex flex-col gap-4 text-white">
                 {[
                   { id: "debit-card", label: "Debit Card" },
-                  { id: "cash", label: "Cash" },
                   { id: "transfer", label: "Transfer" },
                 ].map((method) => (
                   <label
-                    key={method.id} // ✅ Fixed: each payment method now has a unique key
+                    key={method.id}
                     className={`flex items-center gap-3 p-3 rounded-[8px] border cursor-pointer transition ${
                       paymentMethod === method.id
                         ? "border-[#1CC8F8] bg-[#0C111E]"
@@ -224,10 +197,12 @@ export default function Page() {
               </div>
 
               <div className="w-full p-4">
-                <button className="w-full h-12 rounded-[8px] px-5 bg-[#1CC8F8] flex items-center justify-center hover:bg-[#3AD3FA] transition">
-                  <span className="text-black font-extrabold font-inter text-[16px]">
-                    Place Order
-                  </span>
+                <button
+                  onClick={handleCheckout}
+                  disabled={loading}
+                  className="w-full bg-black text-white py-3 rounded-lg mt-4 cursor-pointer disabled:opacity-60"
+                >
+                  {loading ? "Processing..." : "Proceed to Checkout"}
                 </button>
               </div>
             </section>

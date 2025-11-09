@@ -13,7 +13,7 @@
   "dependencies": {
     "@radix-ui/react-slot": "^1.2.3",
     "@types/js-cookie": "^3.0.6",
-    "@wix/ecom": "^1.0.1432",
+    "@wix/ecom": "^1.0.1453",
     "@wix/essentials": "^0.1.28",
     "@wix/members": "^1.0.330",
     "@wix/redirects": "^1.0.97",
