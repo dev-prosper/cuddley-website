@@ -91,16 +91,16 @@ import Cookies from "js-cookie";
 import { createContext, ReactNode, useMemo } from "react";
 
 // infer the type directly from createClient
-type WixClientType = ReturnType<typeof createClient>;
+export type WixClient = ReturnType<typeof createClient>;
 
-export const WixClientContext = createContext<WixClientType | null>(null);
+export const WixClientContext = createContext<WixClient | null>(null);
 
 export const WixClientContextProvider = ({
   children,
 }: {
   children: ReactNode;
 }) => {
-  const wixClient = useMemo<WixClientType>(() => {
+  const wixClient = useMemo<WixClient>(() => {
     const refreshToken = JSON.parse(Cookies.get("refreshToken") || "{}");
 
     return createClient({
