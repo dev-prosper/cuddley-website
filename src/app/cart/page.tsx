@@ -13,7 +13,7 @@ export default function Page() {
   const subtotal = useMemo(
     () =>
       cart.reduce((sum, product) => sum + product.price * product.quantity, 0),
-    [cart],
+    [cart]
   );
   const shipping = subtotal >= 500000 ? 0 : 20000;
   const tax = 5000;
@@ -158,6 +158,88 @@ export default function Page() {
                   <span className="text-white font-semibold">
                     {formatPrice(total)}
                   </span>
+                </div>
+              </div>
+            </section>
+
+            {/* Shipping Information Section */}
+            <section>
+              <div className="w-full h-11.5 pt-4 pl-4">
+                <span className="font-bold font-inter text-white text-[18px]">
+                  Shipping Information
+                </span>
+              </div>
+
+              <div className="w-full h-28 py-3 px-4 flex flex-col gap-3">
+                <label
+                  htmlFor="Name"
+                  className="w-full h-8 font-inter font-medium text-[16px] text-white pb-2"
+                >
+                  Full Name
+                </label>
+                <input
+                  type="text"
+                  className="w-full h-14 bg-[#0C111E] p-4 rounded-[8px] border border-[#3D4254] text-[#9EA3B8]"
+                  placeholder="Liam Carter"
+                  required
+                />
+              </div>
+
+              <div className="w-full h-28 py-3 px-4 flex flex-col gap-3">
+                <label
+                  htmlFor="Address"
+                  className="w-full h-8 font-inter font-medium text-[16px] text-white pb-2"
+                >
+                  Address
+                </label>
+                <input
+                  type="text"
+                  className="w-full h-14 bg-[#0C111E] p-4 rounded-[8px] border border-[#3D4254] text-[#9EA3B8]"
+                  placeholder="123 Main Str"
+                  required
+                />
+              </div>
+
+              <div className="w-full h-28 py-3 px-4 flex flex-col gap-3">
+                <label
+                  htmlFor="Country"
+                  className="w-full h-8 font-inter font-medium text-[16px] text-white pb-2"
+                >
+                  Country
+                </label>
+                <input
+                  type="text"
+                  className="w-full h-14 bg-[#0C111E] p-4 rounded-[8px] border border-[#3D4254] text-[#9EA3B8]"
+                  placeholder="Liam Carter"
+                />
+              </div>
+
+              <div className="w-full h-28 py-3 px-4 flex flex-row gap-3">
+                <div className="min-w-43 max-w-83 w-full h-22 flex flex-col gap-2">
+                  <label
+                    htmlFor="State"
+                    className="w-full h-8 font-inter font-medium text-[16px] text-white pb-2"
+                  >
+                    State
+                  </label>
+
+                  <input
+                    type="text"
+                    className="w-full h-14 bg-[#0C111E] p-4 rounded-[8px] border border-[#3D4254] text-[#9EA3B8]"
+                  />
+                </div>
+                <div className="min-w-43 max-w-83 w-full h-22  flex flex-col gap-2">
+                  <label
+                    htmlFor="Zip-Code"
+                    className="w-full h-8 font-inter font-medium text-[16px] text-white pb-2"
+                  >
+                    Zip Code
+                  </label>
+
+                  <input
+                    type="text"
+                    className="w-full h-14 bg-[#0C111E] p-4 rounded-[8px] border border-[#3D4254] text-[#9EA3B8]"
+                  />
                 </div>
               </div>
             </section>
