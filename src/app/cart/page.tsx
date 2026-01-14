@@ -29,7 +29,7 @@ export default function Page() {
       setLoading(true);
 
       // Example user info — you can get this from your checkout form
-      const userEmail = "customer@example.com";
+      // const userEmail = "customer@example.com";
       // const shippingAddress = "123 Main Street, Lagos, Nigeria";
 
       // Send to backend
