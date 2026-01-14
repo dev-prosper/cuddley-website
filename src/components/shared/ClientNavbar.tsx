@@ -7,7 +7,6 @@ import {
   CloseIcon,
   CuddleyLogo,
   CuddleyLogoImageOnly,
-  FavouriteIcon,
   HamburgerIcon,
 } from "../icons";
 import { cn } from "@/lib/utils";
@@ -43,8 +42,6 @@ export default function ClientNavbar({ cats }: ClientNavbarProps) {
 
       {/* --- NAV ICONS --- */}
       <div className="flex flex-row gap-4 items-center relative">
-        <FavouriteIcon className="size-5 cursor-pointer text-white" />
-
         {/* --- CART ICON --- */}
         <div className="relative">
           <Link href="/cart">

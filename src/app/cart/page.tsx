@@ -7,7 +7,6 @@ import { useCart } from "@/context/CartContext";
 
 export default function Page() {
   const { cart, updateQuantity, removeFromCart } = useCart();
-  // const [paymentMethod, setPaymentMethod] = useState("debit-card");
   const [loading, setLoading] = useState(false);
   const [userAddress, setUserAddress] = useState("");
   const [userEmail, setUserEmail] = useState("");
@@ -27,10 +26,6 @@ export default function Page() {
   const handleCheckout = async () => {
     try {
       setLoading(true);
-
-      // Example user info — you can get this from your checkout form
-      // const userEmail = "customer@example.com";
-      // const shippingAddress = "123 Main Street, Lagos, Nigeria";
 
       // Send to backend
       const response = await fetch("/api/paystack/initialize", {
