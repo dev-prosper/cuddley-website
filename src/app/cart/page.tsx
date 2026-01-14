@@ -302,7 +302,7 @@ export default function Page() {
               <div className="w-full p-4">
                 <button
                   onClick={handleCheckout}
-                  disabled={loading}
+                  disabled={loading || !userAddress || !userEmail}
                   className="w-full bg-[#1CC8F8] font-medium text-white py-3 rounded-lg mt-4 cursor-pointer disabled:opacity-60"
                 >
                   {loading ? "Processing..." : "Proceed to Checkout"}
