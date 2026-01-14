@@ -37,21 +37,22 @@ export default async function FeaturedProducts() {
         subHeading="Explore our curated collections, each designed to bring a unique aesthetic to your home."
       />
 
-      <div className="w-full grid grid-cols-2 gap-y-4 gap-x-3 space-x-5">
+      <div className="w-full grid grid-cols-2 gap-y-8 gap-x-3 space-x-5">
         {featuredProducts.length > 0 ? (
           featuredProducts.map((product) => (
-            <Link
-              key={product._id}
-              href={`/shop/${featuredCollection?.slug}/${product.slug}`}
-              className="block"
-            >
-              <ProductCard
-                imgSrc={product.media?.mainMedia?.image?.url ?? ""}
-                price={product.priceData?.formatted?.price ?? ""}
-                productName={product.name ?? ""}
-                productAlt={product.name ?? ""}
-              />
-            </Link>
+            <div key={product._id}>
+              <Link
+                href={`/shop/${featuredCollection?.slug}/${product.slug}`}
+                className="block"
+              >
+                <ProductCard
+                  imgSrc={product.media?.mainMedia?.image?.url ?? ""}
+                  price={product.priceData?.formatted?.price ?? ""}
+                  productName={product.name ?? ""}
+                  productAlt={product.name ?? ""}
+                />
+              </Link>
+            </div>
           ))
         ) : (
           <p className="text-center text-gray-500 col-span-2">

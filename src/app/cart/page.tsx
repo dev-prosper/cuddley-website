@@ -7,13 +7,15 @@ import { useCart } from "@/context/CartContext";
 
 export default function Page() {
   const { cart, updateQuantity, removeFromCart } = useCart();
-  const [paymentMethod, setPaymentMethod] = useState("debit-card");
+  // const [paymentMethod, setPaymentMethod] = useState("debit-card");
   const [loading, setLoading] = useState(false);
+  const [userAddress, setUserAddress] = useState("");
+  const [userEmail, setUserEmail] = useState("");
 
   const subtotal = useMemo(
     () =>
       cart.reduce((sum, product) => sum + product.price * product.quantity, 0),
-    [cart]
+    [cart],
   );
   const shipping = subtotal >= 500000 ? 0 : 20000;
   const tax = 5000;
@@ -28,7 +30,7 @@ export default function Page() {
 
       // Example user info — you can get this from your checkout form
       const userEmail = "customer@example.com";
-      const shippingAddress = "123 Main Street, Lagos, Nigeria";
+      // const shippingAddress = "123 Main Street, Lagos, Nigeria";
 
       // Send to backend
       const response = await fetch("/api/paystack/initialize", {
@@ -39,8 +41,8 @@ export default function Page() {
           amount: total,
           metadata: {
             cart,
-            shippingAddress,
-            paymentMethod,
+            userAddress,
+            // paymentMethod,
           },
         }),
       });
@@ -180,7 +182,24 @@ export default function Page() {
                 <input
                   type="text"
                   className="w-full h-14 bg-[#0C111E] p-4 rounded-[8px] border border-[#3D4254] text-[#9EA3B8]"
-                  placeholder="Liam Carter"
+                  placeholder="Your Name"
+                  required
+                />
+              </div>
+
+              <div className="w-full h-28 py-3 px-4 flex flex-col gap-3">
+                <label
+                  htmlFor="Name"
+                  className="w-full h-8 font-inter font-medium text-[16px] text-white pb-2"
+                >
+                  Email Address
+                </label>
+                <input
+                  type="text"
+                  className="w-full h-14 bg-[#0C111E] p-4 rounded-[8px] border border-[#3D4254] text-[#9EA3B8]"
+                  placeholder="youremail@sample.com"
+                  value={userEmail}
+                  onChange={(e) => setUserEmail(e.target.value)}
                   required
                 />
               </div>
@@ -196,6 +215,8 @@ export default function Page() {
                   type="text"
                   className="w-full h-14 bg-[#0C111E] p-4 rounded-[8px] border border-[#3D4254] text-[#9EA3B8]"
                   placeholder="123 Main Str"
+                  value={userAddress}
+                  onChange={(e) => setUserAddress(e.target.value)}
                   required
                 />
               </div>
@@ -246,7 +267,7 @@ export default function Page() {
 
             {/* Payment Method */}
             <section>
-              <div className="w-full px-4 pt-4 pb-2">
+              {/* <div className="w-full px-4 pt-4 pb-2">
                 <span className="font-inter font-bold text-[18px] text-white">
                   Payment Method
                 </span>
@@ -276,7 +297,7 @@ export default function Page() {
                     <span>{method.label}</span>
                   </label>
                 ))}
-              </div>
+              </div> */}
 
               <div className="w-full p-4">
                 <button
