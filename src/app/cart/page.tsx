@@ -16,8 +16,10 @@ export default function Page() {
       cart.reduce((sum, product) => sum + product.price * product.quantity, 0),
     [cart],
   );
-  const shipping = subtotal >= 500000 ? 0 : 20000;
-  const tax = 5000;
+  // const shipping = subtotal >= 500000 ? 0 : 20000;
+  const shipping = 0;
+  // const tax = 5000;
+  const tax = 0;
   const total = subtotal + shipping + tax;
 
   const formatPrice = (amount: number) => `₦${amount.toLocaleString("en-NG")}`;
