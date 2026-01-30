@@ -105,7 +105,7 @@ export default async function CategoryPage({
       </div>
 
       {/* Product Grid */}
-      <section className="grid grid-cols-2 gap-4 px-4 pt-6">
+      <section className="grid grid-cols-2 gap-x-4 gap-y-8 px-4 pt-6">
         {res.items.map((product: products.Product) => (
           <Link
             key={product._id}

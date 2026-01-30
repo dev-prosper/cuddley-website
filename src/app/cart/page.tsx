@@ -17,9 +17,9 @@ export default function Page() {
     [cart],
   );
   // const shipping = subtotal >= 500000 ? 0 : 20000;
-  const shipping = 0;
+  const shipping = 17000;
   // const tax = 5000;
-  const tax = 0;
+  const tax = 0.075 * subtotal;
   const total = subtotal + shipping + tax;
 
   const formatPrice = (amount: number) => `₦${amount.toLocaleString("en-NG")}`;
@@ -143,7 +143,8 @@ export default function Page() {
                 <div className="flex justify-between">
                   <span className="text-[#9EA3B8] text-[14px]">Shipping</span>
                   <span className="text-white">
-                    {shipping === 0 ? "Free" : formatPrice(shipping)}
+                    {/* {shipping === 0 ? "Free" : formatPrice(shipping)} */}
+                    {formatPrice(shipping)}
                   </span>
                 </div>
 
