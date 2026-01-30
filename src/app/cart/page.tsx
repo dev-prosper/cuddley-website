@@ -7,7 +7,6 @@ import { useCart } from "@/context/CartContext";
 
 export default function Page() {
   const { cart, updateQuantity, removeFromCart } = useCart();
-  // const [paymentMethod, setPaymentMethod] = useState("debit-card");
   const [loading, setLoading] = useState(false);
   const [fullName, setFullName] = useState("");
   const [userEmail, setUserEmail] = useState("");
@@ -21,8 +20,10 @@ export default function Page() {
       cart.reduce((sum, product) => sum + product.price * product.quantity, 0),
     [cart],
   );
-  const shipping = subtotal >= 500000 ? 0 : 20000;
-  const tax = 5000;
+  // const shipping = subtotal >= 500000 ? 0 : 20000;
+  const shipping = 17000;
+  // const tax = 5000;
+  const tax = 0.075 * subtotal;
   const total = subtotal + shipping + tax;
 
   const formatPrice = (amount: number) => `₦${amount.toLocaleString("en-NG")}`;
@@ -32,6 +33,11 @@ export default function Page() {
     try {
       setLoading(true);
 
+      // Example user info — you can get this from your checkout form
+      const userEmail = "customer@example.com";
+      // const shippingAddress = "123 Main Street, Lagos, Nigeria";
+
+      // Send to backend
       const response = await fetch("/api/paystack/initialize", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -151,7 +157,8 @@ export default function Page() {
                 <div className="flex justify-between">
                   <span className="text-[#9EA3B8] text-[14px]">Shipping</span>
                   <span className="text-white">
-                    {shipping === 0 ? "Free" : formatPrice(shipping)}
+                    {/* {shipping === 0 ? "Free" : formatPrice(shipping)} */}
+                    {formatPrice(shipping)}
                   </span>
                 </div>
 
