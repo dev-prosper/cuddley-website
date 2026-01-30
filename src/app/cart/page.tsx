@@ -8,8 +8,12 @@ import { useCart } from "@/context/CartContext";
 export default function Page() {
   const { cart, updateQuantity, removeFromCart } = useCart();
   const [loading, setLoading] = useState(false);
-  const [userAddress, setUserAddress] = useState("");
+  const [fullName, setFullName] = useState("");
   const [userEmail, setUserEmail] = useState("");
+  const [userAddress, setUserAddress] = useState("");
+  const [country, setCountry] = useState("");
+  const [state, setState] = useState("");
+  const [zipCode, setZipCode] = useState("");
 
   const subtotal = useMemo(
     () =>
@@ -29,6 +33,10 @@ export default function Page() {
     try {
       setLoading(true);
 
+      // Example user info — you can get this from your checkout form
+      const userEmail = "customer@example.com";
+      // const shippingAddress = "123 Main Street, Lagos, Nigeria";
+
       // Send to backend
       const response = await fetch("/api/paystack/initialize", {
         method: "POST",
@@ -38,19 +46,25 @@ export default function Page() {
           amount: total,
           metadata: {
             cart,
-            userAddress,
-            // paymentMethod,
+            shipping: {
+              fullName,
+              email: userEmail,
+              address: userAddress,
+              country,
+              state,
+              zipCode,
+            },
           },
         }),
       });
 
       const data = await response.json();
 
-      if (data.status && data.data.authorization_url) {
+      if (data?.data?.authorization_url) {
         window.location.href = data.data.authorization_url;
       } else {
+        console.error("Paystack error:", data);
         alert("Error initializing payment");
-        console.error(data);
       }
     } catch (error) {
       console.error("Payment init error:", error);
@@ -181,6 +195,8 @@ export default function Page() {
                   type="text"
                   className="w-full h-14 bg-[#0C111E] p-4 rounded-[8px] border border-[#3D4254] text-[#9EA3B8]"
                   placeholder="Your Name"
+                  value={fullName}
+                  onChange={(e) => setFullName(e.target.value)}
                   required
                 />
               </div>
@@ -229,7 +245,10 @@ export default function Page() {
                 <input
                   type="text"
                   className="w-full h-14 bg-[#0C111E] p-4 rounded-[8px] border border-[#3D4254] text-[#9EA3B8]"
-                  placeholder="Liam Carter"
+                  placeholder="Nigeria"
+                  value={country}
+                  onChange={(e) => setCountry(e.target.value)}
+                  required
                 />
               </div>
 
@@ -245,6 +264,9 @@ export default function Page() {
                   <input
                     type="text"
                     className="w-full h-14 bg-[#0C111E] p-4 rounded-[8px] border border-[#3D4254] text-[#9EA3B8]"
+                    value={state}
+                    onChange={(e) => setState(e.target.value)}
+                    required
                   />
                 </div>
                 <div className="min-w-43 max-w-83 w-full h-22  flex flex-col gap-2">
@@ -254,10 +276,11 @@ export default function Page() {
                   >
                     Zip Code
                   </label>
-
                   <input
                     type="text"
                     className="w-full h-14 bg-[#0C111E] p-4 rounded-[8px] border border-[#3D4254] text-[#9EA3B8]"
+                    value={zipCode}
+                    onChange={(e) => setZipCode(e.target.value)}
                   />
                 </div>
               </div>
