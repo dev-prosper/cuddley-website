@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.2.3",
+    "@react-email/render": "^2.0.4",
     "@types/js-cookie": "^3.0.6",
     "@wix/ecom": "^1.0.1453",
     "@wix/essentials": "^0.1.28",
@@ -25,6 +26,7 @@
     "lucide": "^0.541.0",
     "lucide-react": "^0.541.0",
     "next": "15.5.9",
+    "prettier": "^3.8.0",
     "react": "^19.2.0",
     "react-dom": "19.2.0",
     "resend": "^6.0.3",
