@@ -85,7 +85,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="space-y-2.5">
+      {/* <div className="space-y-2.5">
         <h3 className="font-noto-serif font-bold text-xl">
           Subscribe to our Newsletter
         </h3>
@@ -97,7 +97,7 @@ export default function Footer() {
 
           <ArrowRight className="absolute top-1/2 right-6 -translate-y-1/2" />
         </div>
-      </div>
+      </div> */}
 
       <hr className="border-[#BCB7B7D9] border mt-10 mb-5" />
 
