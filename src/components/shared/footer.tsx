@@ -42,7 +42,7 @@ export default function Footer() {
           >
             Customer Support
           </Link>
-          <Link
+          {/* <Link
             href="/"
             className="font-inter text-sm leading-6 text-[#BCB7B7D9] block"
           >
@@ -59,7 +59,7 @@ export default function Footer() {
             className="font-inter text-sm leading-6 text-[#BCB7B7D9] block"
           >
             Privacy Policy
-          </Link>
+          </Link> */}
         </div>
       </div>
 

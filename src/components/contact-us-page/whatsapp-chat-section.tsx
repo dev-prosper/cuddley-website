@@ -11,7 +11,7 @@ export default function WhatsappChatSection() {
 
     const phone = "2349033209215";
     const message =
-      "Hello, I would like to know more about your skincare products!";
+      "Hello, I would like to make some inquires about your products!";
     const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
 
     setTimeout(() => {
