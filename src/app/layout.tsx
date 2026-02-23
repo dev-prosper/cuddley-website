@@ -60,7 +60,7 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${notoSerif.variable} ${roboto.variable} ${inter.variable} antialiased`}
+        className={`${notoSerif.variable} ${roboto.variable} ${inter.variable} antialiased bg-[#0A0A11]`}
       >
         <CartProvider>
           <MaxWidthContainer>
