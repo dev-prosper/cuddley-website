@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import { Noto_Serif, Roboto, Inter } from "next/font/google";
 import "./globals.css";
+import { Noto_Serif, Roboto, Inter } from "next/font/google";
 import MaxWidthContainer from "@/components/shared/maxwidth-container";
 import ClientNavbar from "@/components/shared/ClientNavbar";
 import Footer from "@/components/shared/footer";
