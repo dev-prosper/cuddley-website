@@ -36,7 +36,7 @@ export default function ClientNavbar({ cats }: ClientNavbarProps) {
             alt="cuddley interiors logo"
             width={196}
             height={24}
-            unoptimized
+            // unoptimized
           />
         </Link>
       </div>
@@ -85,6 +85,7 @@ export default function ClientNavbar({ cats }: ClientNavbarProps) {
                 alt="cuddley interiors logo"
                 width={94}
                 height={24}
+                // unoptimized
               />
             </Link>
             <button onClick={() => setIsMobileNavbarOpen(false)}>
