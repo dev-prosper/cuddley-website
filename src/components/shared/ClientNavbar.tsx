@@ -32,10 +32,11 @@ export default function ClientNavbar({ cats }: ClientNavbarProps) {
       <div className="w-fit">
         <Link href="/" className="w-full">
           <Image
-            src="/images/logoWithText.png"
+            src="/images/logowithtext.png"
             alt="cuddley interiors logo"
             width={196}
             height={24}
+            unoptimized
           />
         </Link>
       </div>
