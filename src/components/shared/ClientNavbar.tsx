@@ -2,15 +2,10 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import {
-  CartIcon,
-  CloseIcon,
-  CuddleyLogo,
-  CuddleyLogoImageOnly,
-  HamburgerIcon,
-} from "../icons";
+import { CartIcon, CloseIcon, HamburgerIcon } from "../icons";
 import { cn } from "@/lib/utils";
-import { useCart } from "@/context/CartContext"; // ✅ import cart context
+import { useCart } from "@/context/CartContext";
+import Image from "next/image";
 
 type Category = {
   _id: string;
@@ -34,9 +29,14 @@ export default function ClientNavbar({ cats }: ClientNavbarProps) {
   return (
     <header className="w-full max-w-[600px] flex flex-row justify-between px-4 pt-10 relative mx-auto">
       {/* --- LOGO --- */}
-      <div>
-        <Link href="/">
-          <CuddleyLogo className="w-48 h-8 text-[#FEFEFF]" />
+      <div className="w-fit">
+        <Link href="/" className="w-full">
+          <Image
+            src="/images/logoWithText.png"
+            alt="cuddley interiors logo"
+            width={196}
+            height={24}
+          />
         </Link>
       </div>
 
@@ -74,7 +74,18 @@ export default function ClientNavbar({ cats }: ClientNavbarProps) {
         >
           {/* --- HEADER --- */}
           <div className="bg-[#1C1F26] rounded-xl flex flex-row justify-between py-4 px-4 items-center">
-            <CuddleyLogoImageOnly />
+            <Link
+              href="/"
+              className="w-full"
+              onClick={() => setIsMobileNavbarOpen(false)}
+            >
+              <Image
+                src="/images/logo.png"
+                alt="cuddley interiors logo"
+                width={94}
+                height={24}
+              />
+            </Link>
             <button onClick={() => setIsMobileNavbarOpen(false)}>
               <CloseIcon className="size-5 text-white cursor-pointer" />
             </button>
